@@ -266,8 +266,8 @@
         </div>
       </div>
 
-      <!-- Center: Tipografi Raksasa & Overlapping Profile Photo (FOTO SAMPUL TANPA BACKGROUND) -->
-      <div class="relative my-8 md:my-14 flex flex-col items-center justify-center min-h-[380px] md:min-h-[580px]">
+      <!-- Center: Tipografi Raksasa & Overlapping Profile Photo (foto propil.png) -->
+      <div class="relative group my-8 md:my-14 flex flex-col items-center justify-center min-h-[380px] md:min-h-[580px]">
         
         <!-- Big Serif Display "DELLA" (Belakang Foto) -->
         <div class="w-full text-center select-none pointer-events-none z-0">
@@ -276,20 +276,20 @@
           </h1>
         </div>
 
-        <!-- Overlapping Profile Photo (hps bg) -->
+        <!-- Overlapping Profile Photo (foto propil.png): Grayscale Default, Hover Full Color + Zoom -->
         <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 sm:w-72 md:w-88 lg:w-96 flex items-center justify-center pointer-events-auto">
           <img 
-            src="assets/hps%20bg.jpeg" 
+            src="assets/foto propil.png" 
             alt="Della Arthamevia, S.T. — Foto Sampul" 
-            onerror="this.onerror=null; this.src='assets/foto-profil.jpg';"
-            class="w-full h-auto max-h-[460px] md:max-h-[560px] object-contain drop-shadow-2xl mx-auto hover:scale-105 transition-transform duration-700"
+            onerror="this.onerror=null; this.src='assets/hps bg.jpeg';"
+            class="w-full h-auto max-h-[460px] md:max-h-[560px] object-contain drop-shadow-2xl mx-auto filter grayscale group-hover:grayscale-0 group-hover:scale-105 hover:grayscale-0 hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
           >
         </div>
 
-        <!-- Teks Italic "Arthamevia" di bawah DELLA -->
-        <div class="w-full text-center z-20 mt-16 md:mt-24 pointer-events-none">
-          <h2 class="font-serif italic text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-[#141413]/90 tracking-tight">
-            Arthamevia
+        <!-- Teks Italic "Arthamevia" di depan foto: Huruf depan baju toga berwarna background (#F6F5F0) -->
+        <div class="w-full text-center z-20 mt-16 md:mt-24 pointer-events-none select-none">
+          <h2 class="font-serif italic text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tight">
+            <span class="text-[#141413]">Ar</span><span class="text-[#F6F5F0] drop-shadow-[0_1px_3px_rgba(20,20,19,0.35)]">thame</span><span class="text-[#141413]">via</span>
           </h2>
         </div>
 
