@@ -86,10 +86,10 @@ function initProjects() {
         </div>
         <div class="project-action-bar">
           <a href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn">
-            <span>🚀</span> Pratinjau Demo
+            <span>📄</span> Lihat Dokumen / Bukti
           </a>
           <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">
-            <span>🐙</span> Kode Sumber
+            <span>📂</span> Repositori
           </a>
         </div>
       </div>
@@ -238,6 +238,23 @@ function initEducationAndLanguages() {
         <p class="edu-highlights">${edu.highlights}</p>
       </div>
     `).join("");
+
+    if (portfolioData.organizations && portfolioData.organizations.length > 0) {
+      eduContainer.innerHTML += `
+        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px dashed var(--pink-soft);">
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--pink-deep); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.4rem;">
+            <span>🏛️</span> Pengalaman Organisasi & Kepanitiaan
+          </h4>
+          ${portfolioData.organizations.map(org => `
+            <div style="margin-bottom: 0.95rem; padding-left: 0.75rem; border-left: 2px solid var(--pink-soft);">
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">${org.role} — <span style="font-weight: 600; color: var(--pink-deep);">${org.name}</span></div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem;">📅 ${org.period}</div>
+              <div style="font-size: 0.86rem; color: var(--text-main); line-height: 1.5;">${org.desc}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
   }
 
   const langContainer = document.getElementById("languages-container");
@@ -264,12 +281,12 @@ function initFooterAndSocial() {
 
   const footerSocial = document.getElementById("footer-social-links");
   if (footerSocial) {
-    footerSocial.innerHTML = `
-      <a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-      <a href="${profile.github}" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-      <a href="${profile.dribbble}" target="_blank" rel="noopener noreferrer" class="social-link">Dribbble</a>
-      <a href="mailto:${profile.email}" class="social-link">Email</a>
-    `;
+    const links = [];
+    if (profile.linkedin) links.push(`<a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>`);
+    if (profile.github) links.push(`<a href="${profile.github}" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>`);
+    if (profile.dribbble) links.push(`<a href="${profile.dribbble}" target="_blank" rel="noopener noreferrer" class="social-link">Dribbble</a>`);
+    if (profile.email) links.push(`<a href="mailto:${profile.email}" class="social-link">Email</a>`);
+    footerSocial.innerHTML = links.join("");
   }
 }
 
