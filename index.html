@@ -1,324 +1,1446 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Della Arthamevia — Portofolio Profesional | Teknik Kimia & Dokumen Lingkungan</title>
-  <meta name="description" content="Website Portofolio profesional Della Arthamevia — Lulusan S1 Teknik Kimia UPN Veteran Jawa Timur dengan keahlian penyusunan dokumen lingkungan (UKL-UPL & Pertek BMAL), operasional pabrik, serta pembuatan konten digital.">
-  <meta name="author" content="Della Arthamevia">
-  <meta name="theme-color" content="#FF6584">
+  <title>Della Arthamevia, S.T. — Editorial Portfolio</title>
+  <meta name="description" content="Website portofolio profesional Della Arthamevia, S.T. bergaya Editorial Magazine Minimalist. Lulusan S1 Teknik Kimia UPN 'Veteran' Jawa Timur (IPK 3,80), Spesialis Dokumen Lingkungan (UKL-UPL & Pertek BMAL), Ahli K3 Madya BNSP, dan Digital Content Creator.">
+  <meta name="author" content="Della Arthamevia, S.T.">
+  <meta name="theme-color" content="#141413">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Della Arthamevia — Portofolio Profesional | Teknik Kimia & Dokumen Lingkungan">
-  <meta property="og:description" content="Web Portofolio personal Della Arthamevia, S1 Teknik Kimia UPN Veteran Jawa Timur. Berisi data diri, karya proyek, rekam jejak pengalaman kerja, pelatihan sertifikasi BNSP, dan keahlian.">
+  <meta property="og:title" content="Della Arthamevia, S.T. — Editorial Portfolio">
+  <meta property="og:description" content="Portofolio profesional bergaya Editorial Magazine Minimalist. Rekam jejak teknik kimia, dokumen lingkungan, sertifikasi BNSP, dan kreasi konten digital.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon / Monogram Emoji Icon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 font-family=%22serif%22 font-style=%22italic%22>D.</text></svg>">
 
-  <!-- Google Fonts Preconnect -->
+  <!-- Google Fonts: Cormorant Garamond (Serif) & Plus Jakarta Sans (Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/glassmorphism.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F6F5F0',
+            charcoal: '#141413',
+            editorialBorder: '#E2DFD2',
+            darkBorder: '#282826',
+            darkMuted: '#9E9E97',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Base Reset & Typography Setup */
+    body {
+      background-color: #F6F5F0;
+      color: #141413;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    ::selection {
+      background-color: #141413;
+      color: #F6F5F0;
+    }
+
+    /* Custom Cursor */
+    @media (pointer: fine) {
+      .custom-cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #F6F5F0;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference;
+        transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), height 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      }
+      .custom-cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border: 1px solid #F6F5F0;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference;
+        transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+      }
+      body.cursor-active .custom-cursor-outline {
+        width: 64px;
+        height: 64px;
+        background-color: rgba(246, 245, 240, 0.95);
+        border: none;
+      }
+      body.cursor-active .custom-cursor-dot {
+        opacity: 0;
+      }
+    }
+
+    @media (pointer: coarse) {
+      .custom-cursor-dot, .custom-cursor-outline {
+        display: none !important;
+      }
+    }
+
+    /* Infinite Marquee Animation */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: 200%;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Editorial Thin Grid Lines */
+    .border-editorial {
+      border-color: #E2DFD2;
+    }
+
+    /* Modal Backdrop Transitions */
+    dialog::backdrop {
+      background: rgba(20, 20, 19, 0.78);
+      backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased text-[#141413] bg-[#F6F5F0]">
 
-  <!-- Ambient Glow Orbs di Latar Belakang -->
-  <div class="ambient-glow-wrapper" aria-hidden="true">
-    <div class="bg-glow-orb bg-glow-orb-1"></div>
-    <div class="bg-glow-orb bg-glow-orb-2"></div>
-    <div class="bg-glow-orb bg-glow-orb-3"></div>
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-outline" class="custom-cursor-outline" aria-hidden="true"></div>
+
+  <!-- FLOATING PREVIEW IMAGE FOR PROJECT LIST (DESKTOP) -->
+  <div id="floating-project-preview" class="fixed pointer-events-none z-30 opacity-0 scale-95 transition-all duration-200 shadow-2xl rounded-none border border-[#141413]/30 overflow-hidden w-72 h-44 hidden md:block bg-stone-900" aria-hidden="true">
+    <img id="floating-project-img" src="" alt="Preview Proyek" class="w-full h-full object-cover">
   </div>
 
-  <!-- Header Navigasi Sticky Glassmorphism -->
-  <header class="site-header glass-header" id="main-header">
-    <div class="container navbar">
-      <a href="#tentang" class="brand-monogram" aria-label="Beranda Portofolio Della Arthamevia">
-        <div class="monogram-badge">DA</div>
-        <div class="brand-text">Della<span>Arthamevia</span></div>
+  <!-- PRELOADER (1.8 DETIK) -->
+  <div id="preloader" class="fixed inset-0 z-[100] bg-[#141413] text-[#F6F5F0] flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
+    <div class="text-center px-6">
+      <p class="font-serif italic text-sm md:text-base tracking-[0.3em] text-[#9E9E97] mb-3 uppercase">Portfolio Edition</p>
+      <h1 class="font-serif text-2xl md:text-4xl tracking-[0.25em] font-light uppercase">
+        DELLA ARTHAMEVIA <span class="font-sans font-thin opacity-40">—</span> PORTFOLIO
+      </h1>
+      <!-- Animated Thin Loading Line -->
+      <div class="w-48 md:w-72 h-[1px] bg-white/20 mx-auto mt-6 relative overflow-hidden">
+        <div id="preloader-bar" class="absolute top-0 left-0 h-full bg-[#F6F5F0] w-0 transition-all duration-[1700ms] ease-out"></div>
+      </div>
+      <p class="font-sans text-[11px] tracking-[0.2em] text-[#9E9E97] mt-4 uppercase">Loading Editorial Canvas...</p>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR MINIMALIS -->
+  <header class="sticky top-0 z-40 w-full bg-[#F6F5F0]/90 backdrop-blur-md border-b border-[#E2DFD2] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Logo Teks Kiri Atas: Serif Italic -->
+      <a href="#hero" class="group flex items-center gap-2 cursor-pointer" data-hover>
+        <span class="font-serif italic font-bold text-2xl md:text-3xl text-[#141413] tracking-tight group-hover:opacity-75 transition-opacity">
+          Della A.
+        </span>
+        <span class="text-[10px] uppercase font-sans tracking-widest text-[#141413]/50 border-l border-[#141413]/30 pl-2 hidden sm:inline-block">
+          Portfolio
+        </span>
       </a>
 
-      <!-- Menu Navigasi Anchor -->
-      <nav aria-label="Navigasi Utama">
-        <ul class="nav-links">
-          <li><a href="#tentang" class="active">Tentang</a></li>
-          <li><a href="#proyek">Proyek</a></li>
-          <li><a href="#pengalaman">Pengalaman</a></li>
-          <li><a href="#pelatihan">Pelatihan</a></li>
-          <li><a href="#keahlian">Keahlian</a></li>
-          <li><a href="#pendidikan">Pendidikan</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-        </ul>
+      <!-- Desktop Navigasi Bernomor Kecil -->
+      <nav class="hidden lg:flex items-center gap-8 text-[12px] tracking-[0.16em] uppercase font-medium">
+        <a href="#profil" class="hover:text-[#141413] text-[#141413]/70 transition-colors py-1 hover:border-b hover:border-[#141413]" data-hover>
+          <span class="font-serif italic text-sm mr-1">01</span> PROFIL
+        </a>
+        <a href="#proyek" class="hover:text-[#141413] text-[#141413]/70 transition-colors py-1 hover:border-b hover:border-[#141413]" data-hover>
+          <span class="font-serif italic text-sm mr-1">02</span> PROYEK
+        </a>
+        <a href="#keahlian" class="hover:text-[#141413] text-[#141413]/70 transition-colors py-1 hover:border-b hover:border-[#141413]" data-hover>
+          <span class="font-serif italic text-sm mr-1">03</span> KEAHLIAN
+        </a>
+        <a href="#sertifikasi" class="hover:text-[#141413] text-[#141413]/70 transition-colors py-1 hover:border-b hover:border-[#141413]" data-hover>
+          <span class="font-serif italic text-sm mr-1">04</span> SERTIFIKASI & ORGANISASI
+        </a>
+        <a href="#kontak" class="hover:text-[#141413] text-[#141413]/70 transition-colors py-1 hover:border-b hover:border-[#141413]" data-hover>
+          <span class="font-serif italic text-sm mr-1">05</span> KONTAK
+        </a>
       </nav>
 
-      <!-- Tombol Aksi Header -->
-      <div class="nav-actions">
-        <!-- Tombol Unduh File CV -->
-        <a href="assets/CV_DELLA%20ARTHAMEVIA%20FIKS%20BARU.pdf" id="btn-download-cv-nav" class="btn btn-outline" download title="Unduh File CV Resmi (PDF)">
-          <span>📄</span>
-          <span>Unduh CV</span>
+      <!-- CTA Nav Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-4">
+        <a href="assets/cv-della.pdf" download class="hidden sm:inline-flex items-center gap-2 border border-[#141413] px-4 py-2 text-[11px] uppercase tracking-[0.15em] font-semibold hover:bg-[#141413] hover:text-[#F6F5F0] transition-all duration-200" data-hover>
+          <span>UNDUH CV</span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
         </a>
 
-        <!-- Tombol Aksi Kontak -->
-        <a href="#kontak" class="btn btn-primary" title="Hubungi dan diskusikan peluang kerja">
-          <span>💬</span>
-          <span>Hubungi Saya</span>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#141413] focus:outline-none" aria-label="Buka Menu" data-hover>
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-[#E2DFD2] bg-[#F6F5F0] px-6 py-6 transition-all">
+      <div class="flex flex-col gap-4 text-xs tracking-[0.18em] uppercase font-semibold">
+        <a href="#profil" class="mobile-nav-link py-2 border-b border-[#E2DFD2]/60 flex items-center justify-between">
+          <span>01 PROFIL</span> <i data-lucide="arrow-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#proyek" class="mobile-nav-link py-2 border-b border-[#E2DFD2]/60 flex items-center justify-between">
+          <span>02 PROYEK</span> <i data-lucide="arrow-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#keahlian" class="mobile-nav-link py-2 border-b border-[#E2DFD2]/60 flex items-center justify-between">
+          <span>03 KEAHLIAN</span> <i data-lucide="arrow-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#sertifikasi" class="mobile-nav-link py-2 border-b border-[#E2DFD2]/60 flex items-center justify-between">
+          <span>04 SERTIFIKASI & ORGANISASI</span> <i data-lucide="arrow-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#kontak" class="mobile-nav-link py-2 border-b border-[#E2DFD2]/60 flex items-center justify-between">
+          <span>05 KONTAK</span> <i data-lucide="arrow-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="assets/cv-della.pdf" download class="mt-2 text-center border border-[#141413] bg-[#141413] text-[#F6F5F0] py-3 text-xs uppercase tracking-widest font-bold">
+          Unduh Dokumen CV (PDF)
         </a>
       </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       MAIN PORTFOLIO SHOWCASE
+       BAGIAN 1: HALAMAN UTAMA (HERO SECTION — Gaya Sampul Majalah)
        ========================================================================= -->
-  <main id="showcase-view">
-
-    <!-- Hero Section (Data Diri & Pengantar) -->
-    <section class="section-wrapper hero-section" id="tentang">
-      <div class="container">
-        <div class="glass-panel hero-card">
-          <div class="hero-content">
-            <div class="hero-status-pill">
-              <span class="status-dot"></span>
-              <span id="profile-status">Terbuka untuk Peluang Kerja & Proyek Kolaborasi</span>
-            </div>
-
-            <h1 class="hero-title">
-              Halo, Saya <span class="gradient-text" id="profile-name">Della Arthamevia</span> 🌸
-            </h1>
-
-            <p class="hero-role-headline" id="profile-title">
-              S1 Teknik Kimia | Dokumen Lingkungan & Kreator Konten Digital
-            </p>
-
-            <p class="hero-bio" id="profile-bio">
-              Lulusan S1 Teknik Kimia UPN "Veteran" Jawa Timur dengan IPK 3,80. Memiliki pengalaman dalam penyusunan dokumen lingkungan melalui program PKKM dan proyek freelance, pengalaman praktik kerja lapangan di bagian produksi pabrik gula, serta pembuatan konten digital.
-            </p>
-
-            <div class="hero-action-buttons">
-              <a href="#" id="btn-whatsapp" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                <span>💬</span> Hubungi via WhatsApp
-              </a>
-              <button id="btn-copy-email" class="btn btn-secondary">
-                <span>✉️</span> Salin Email
-              </button>
-              <a href="assets/CV_DELLA%20ARTHAMEVIA%20FIKS%20BARU.pdf" id="btn-download-cv-hero" class="btn btn-secondary" download title="Unduh File CV Asli">
-                <span>📄</span> Unduh CV (PDF)
-              </a>
-              <a href="#proyek" class="btn btn-secondary">
-                <span>🎨</span> Lihat Galeri Proyek
-              </a>
-            </div>
-          </div>
-
-          <!-- Avatar Frame -->
-          <div class="hero-avatar-wrapper">
-            <div class="avatar-halo"></div>
-            <div class="avatar-image-frame">
-              <img id="profile-avatar" src="assets/FOTO%20AKU%20.jpeg" alt="Foto Profil Della Arthamevia">
-            </div>
-            <div class="avatar-badge-float">
-              <span>📍</span> <span id="profile-location">Gresik, Jawa Timur, ID</span>
-            </div>
-          </div>
+  <section id="hero" class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-[#E2DFD2]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Baris Atas Info Editorial Majalah -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2DFD2]/80 text-[11px] md:text-xs tracking-[0.16em] uppercase font-medium text-[#141413]/70">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span>AVAILABLE FOR FULL-TIME & PROFESSIONAL CONTRACT</span>
         </div>
-
-        <!-- Quick Stats Grid -->
-        <div class="stats-grid" id="stats-container">
-          <!-- Diisi otomatis oleh JavaScript -->
+        <div class="text-left md:text-right font-serif italic text-sm tracking-normal font-semibold text-[#141413]">
+          Vol. 2026 — Official Portfolio Edition
         </div>
       </div>
-    </section>
 
-    <!-- Projects Section (Galeri Karya & Proyek Unggulan) -->
-    <section class="section-wrapper" id="proyek">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pill-tag">🎨 Galeri Karya Portofolio</div>
-          <h2 class="section-title">Proyek & Karya Unggulan</h2>
-          <p class="section-desc">Koleksi proyek pilihan mencakup perancangan antarmuka digital, web development, dan implementasi visual interaktif.</p>
-        </div>
-
-        <!-- Grid Proyek -->
-        <div class="projects-grid" id="projects-container">
-          <!-- Diisi otomatis oleh JavaScript dari data.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section (Riwayat Pengalaman / Karir) -->
-    <section class="section-wrapper" id="pengalaman">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pill-tag">💼 Rekam Jejak Karir</div>
-          <h2 class="section-title">Pengalaman Kerja & Kontribusi</h2>
-          <p class="section-desc">Riwayat peran profesional, tanggung jawab utama, dan dampak terukur yang pernah dihasilkan.</p>
-        </div>
-
-        <!-- Timeline Komponen -->
-        <div class="timeline-container">
-          <div class="timeline-stem"></div>
-          <div id="experience-timeline-list">
-            <!-- Diisi otomatis oleh JavaScript -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trainings & Certifications Section (Pelatihan Bersertifikat) -->
-    <section class="section-wrapper" id="pelatihan">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pill-tag">📜 Lisensi & Sertifikasi</div>
-          <h2 class="section-title">Pelatihan & Sertifikasi Profesional</h2>
-          <p class="section-desc">Pengembangan kompetensi berkelanjutan melalui program pelatihan berstandar nasional dan global.</p>
-        </div>
-
-        <div class="trainings-grid" id="trainings-container">
-          <!-- Diisi otomatis oleh JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section (Matriks Keahlian & Kategori) -->
-    <section class="section-wrapper" id="keahlian">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pill-tag">⚡ Kompetensi & Keahlian</div>
-          <h2 class="section-title">Keahlian Teknis & Alat Kerja</h2>
-          <p class="section-desc">Eksplorasi spektrum kemampuan teknis, perangkat lunak desain, dan soft skills yang dikuasai.</p>
-        </div>
-
-        <!-- Tab Filter Kategori Skill -->
-        <div class="skill-tabs-nav" id="skill-category-tabs">
-          <!-- Tombol filter diisi dinamis oleh JavaScript -->
-        </div>
-
-        <!-- Grid Kartu Skill -->
-        <div class="skills-grid" id="skills-grid-container">
-          <!-- Diisi otomatis oleh JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Language Section -->
-    <section class="section-wrapper" id="pendidikan">
-      <div class="container">
-        <div class="extra-info-grid">
-          <!-- Kolom Pendidikan -->
-          <div class="glass-panel info-card">
-            <h3 class="info-card-title">
-              <span>🎓</span> Riwayat Pendidikan Formal
-            </h3>
-            <div id="education-container">
-              <!-- Diisi otomatis oleh JavaScript -->
-            </div>
-          </div>
-
-          <!-- Kolom Kemampuan Bahasa -->
-          <div class="glass-panel info-card">
-            <h3 class="info-card-title">
-              <span>🗣️</span> Penguasaan Bahasa
-            </h3>
-            <div class="language-list" id="languages-container">
-              <!-- Diisi otomatis oleh JavaScript -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer & Quick Contact Call-To-Action -->
-    <footer class="site-footer" id="kontak">
-      <div class="container">
-        <div class="glass-panel cta-box">
-          <h2 class="cta-title">Tertarik Membangun Karya atau Merekrut Saya?</h2>
-          <p class="cta-desc">
-            Saya siap berkontribusi pada proyek inovatif berikutnya atau bergabung dalam tim hebat Anda. Mari diskusikan bagaimana kita bisa berkolaborasi!
+      <!-- Info Editorial Kecil Kiri & Kanan di Atas Tipografi -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-8 pb-4">
+        <div>
+          <p class="text-[11px] md:text-xs tracking-[0.2em] uppercase font-semibold text-[#141413]/60 mb-1">Headline / Peran Utama</p>
+          <p class="text-xs md:text-sm font-medium text-[#141413] leading-relaxed">
+            Chemical Engineering Graduate | Environmental Document Specialist | Certified Ahli K3 Madya BNSP | Digital Content Creator
           </p>
-          <div class="cta-buttons">
-            <a href="#" id="cta-whatsapp-link" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              <span>💬</span> Hubungi via WhatsApp Langsung
-            </a>
-            <button id="cta-copy-email-btn" class="btn btn-secondary">
-              <span>📋</span> Salin Alamat Email
-            </button>
-            <a href="#" id="btn-download-cv-footer" class="btn btn-secondary" title="Unduh File CV Resmi">
-              <span>📄</span> Unduh CV Lengkap (PDF)
-            </a>
-          </div>
         </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 Della Arthamevia. Dirancang dengan rona Soft Pastel Rose & Glassmorphism.</p>
-          <div class="social-links" id="footer-social-links">
-            <!-- Diisi otomatis oleh JavaScript -->
-          </div>
+        <div class="md:text-right">
+          <p class="text-[11px] md:text-xs tracking-[0.2em] uppercase font-semibold text-[#141413]/60 mb-1">Nama Lengkap & Gelar</p>
+          <p class="font-serif text-xl md:text-2xl font-bold text-[#141413] tracking-wide">
+            Della Arthamevia, S.T.
+          </p>
         </div>
       </div>
-    </footer>
 
-  </main>
+      <!-- Center: Tipografi Raksasa & Overlapping Profile Photo (Magazine Cover Stacking) -->
+      <div class="relative my-8 md:my-14 flex flex-col items-center justify-center min-h-[380px] md:min-h-[580px]">
+        
+        <!-- Big Serif Display "DELLA" (Belakang Foto) -->
+        <div class="w-full text-center select-none pointer-events-none z-0">
+          <h1 class="font-serif font-bold text-[22vw] md:text-[21vw] leading-[0.78] tracking-[-0.04em] text-[#141413] uppercase opacity-95">
+            DELLA
+          </h1>
+        </div>
+
+        <!-- Overlapping Profile Photo (Tepat di tengah menumpuk teks DELLA) -->
+        <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-80 lg:w-96 group">
+          <div class="relative p-2 md:p-3 bg-[#F6F5F0] border border-[#141413]/25 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+            <div class="aspect-[3/4] overflow-hidden bg-stone-300 relative">
+              <img 
+                src="assets/foto-profil.jpg" 
+                alt="Della Arthamevia, S.T." 
+                onerror="this.onerror=null; this.src='assets/FOTO%20AKU%20.jpeg';"
+                class="w-full h-full object-cover grayscale contrast-105 hover:grayscale-0 transition-all duration-700"
+              >
+            </div>
+            <!-- Small Editorial Caption under photo -->
+            <div class="pt-2 px-1 flex items-center justify-between text-[9px] md:text-[10px] tracking-widest uppercase font-mono text-[#141413]/70">
+              <span>FIG. 01 — COVER</span>
+              <span>UPN "VETERAN" JATIM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teks Italic "Arthamevia" di bawah DELLA -->
+        <div class="w-full text-center z-20 mt-16 md:mt-24 pointer-events-none">
+          <h2 class="font-serif italic text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-[#141413]/90 tracking-tight">
+            Arthamevia
+          </h2>
+        </div>
+
+      </div>
+
+      <!-- Bagian Bawah Kiri & Kanan: Value Proposition & 3 Tombol CTA -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pt-8 border-t border-[#E2DFD2]/80">
+        
+        <!-- Value Proposition Kiri -->
+        <div class="lg:col-span-7">
+          <span class="inline-block text-[10px] tracking-[0.25em] uppercase font-bold text-[#141413]/50 mb-2 font-mono">
+            [VALUE PROPOSITION]
+          </span>
+          <p class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] leading-snug font-normal">
+            Lulusan S1 Teknik Kimia UPN "Veteran" Jawa Timur (IPK 3,80) yang berpengalaman dalam penyusunan dokumen lingkungan (UKL-UPL & Pertek BMAL), evaluasi proses industri, serta pengelolaan konten kreatif digital.
+          </p>
+        </div>
+
+        <!-- 3 Tombol CTA Kanan Bergaya Editorial -->
+        <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+          <a href="#proyek" class="w-full text-center py-3.5 px-6 bg-[#141413] text-[#F6F5F0] text-xs uppercase tracking-[0.2em] font-semibold hover:bg-stone-800 transition-colors duration-200 flex items-center justify-center gap-2 group" data-hover>
+            <span>Lihat Proyek Saya</span>
+            <i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"></i>
+          </a>
+          <a href="assets/cv-della.pdf" download class="w-full text-center py-3.5 px-6 border border-[#141413] text-[#141413] text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#141413] hover:text-[#F6F5F0] transition-all duration-200 flex items-center justify-center gap-2" data-hover>
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>Unduh CV (PDF)</span>
+          </a>
+          <a href="#kontak" class="w-full text-center py-3.5 px-6 border border-[#141413]/40 text-[#141413] text-xs uppercase tracking-[0.2em] font-medium hover:border-[#141413] hover:bg-[#141413]/5 transition-all duration-200" data-hover>
+            <span>Hubungi Saya</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PITA TEKS BERJALAN (Infinite Marquee Banner - Tilted -1.5 Deg) -->
+    <div class="relative w-[105%] -left-[2.5%] mt-16 md:mt-24 py-4 bg-[#141413] text-[#F6F5F0] overflow-hidden -rotate-[1.5deg] shadow-lg">
+      <div class="marquee-track whitespace-nowrap text-xs md:text-sm font-sans tracking-[0.25em] uppercase font-semibold">
+        <span class="inline-block px-4">CHEMICAL ENGINEERING GRADUATE ✦ ENVIRONMENTAL DOCUMENT SPECIALIST ✦ CERTIFIED AHLI K3 MADYA BNSP ✦ DIGITAL CONTENT CREATOR ✦</span>
+        <span class="inline-block px-4">CHEMICAL ENGINEERING GRADUATE ✦ ENVIRONMENTAL DOCUMENT SPECIALIST ✦ CERTIFIED AHLI K3 MADYA BNSP ✦ DIGITAL CONTENT CREATOR ✦</span>
+        <span class="inline-block px-4">CHEMICAL ENGINEERING GRADUATE ✦ ENVIRONMENTAL DOCUMENT SPECIALIST ✦ CERTIFIED AHLI K3 MADYA BNSP ✦ DIGITAL CONTENT CREATOR ✦</span>
+        <span class="inline-block px-4">CHEMICAL ENGINEERING GRADUATE ✦ ENVIRONMENTAL DOCUMENT SPECIALIST ✦ CERTIFIED AHLI K3 MADYA BNSP ✦ DIGITAL CONTENT CREATOR ✦</span>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================================================
-       NATIVE HTML5 DIALOG (Modal Lightbox Detail Sertifikat)
+       BAGIAN 2: "01 — PROFIL" (TENTANG SAYA)
        ========================================================================= -->
-  <dialog id="certificate-modal" class="glass-dialog">
-    <div class="glass-modal-card">
-      <div class="modal-header">
-        <h3 id="modal-cert-title">Detail Sertifikat Pelatihan</h3>
-        <button id="modal-close-btn" class="modal-close-btn" aria-label="Tutup Jendela Modal">✕</button>
+  <section id="profil" class="py-20 md:py-32 border-b border-[#E2DFD2]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex items-center gap-4 mb-12 md:mb-16 pb-4 border-b border-[#E2DFD2]">
+        <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60">01</span>
+        <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">
+          PROFIL & BIOGRAFI
+        </h2>
       </div>
 
-      <div class="modal-body">
-        <div class="cert-preview-card">
-          <div class="cert-preview-icon">📜</div>
-          <h4 id="modal-cert-issuer" style="font-size: 1.15rem; color: var(--pink-deep); margin-bottom: 0.35rem;">Institusi Penerbit</h4>
-          <p id="modal-cert-badge" style="display: inline-block; font-size: 0.8rem; font-weight: 700; background: var(--pink-blush); color: var(--pink-deep); padding: 0.2rem 0.75rem; border-radius: 99px;">Tipe Akreditasi</p>
-        </div>
-
-        <div class="cert-meta-item">
-          <strong>Nomor Kredensial / ID:</strong>
-          <span id="modal-cert-id" style="font-family: monospace; background: var(--pink-lightest); padding: 0.2rem 0.5rem; border-radius: 4px;">-</span>
-        </div>
-
-        <div class="cert-meta-item">
-          <strong>Tahun Penerbitan:</strong>
-          <span id="modal-cert-year">-</span>
-        </div>
-
-        <div class="cert-meta-item" style="margin-top: 1rem;">
-          <strong>Deskripsi Materi Pelatihan:</strong>
-          <p id="modal-cert-desc" style="color: var(--text-muted); font-size: 0.94rem; margin-top: 0.35rem; line-height: 1.6;">-</p>
-        </div>
-
-        <div class="cert-meta-item" style="margin-top: 1rem;">
-          <strong>Kompetensi yang Dicapai:</strong>
-          <div id="modal-cert-skills" style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.5rem;">
-            <!-- Badge kompetensi diisi dinamis -->
+      <!-- Layout 2 Kolom Gaya Artikel Majalah -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Kolom Kiri: Bingkai Foto Potret Diri -->
+        <div class="lg:col-span-5">
+          <div class="border border-[#141413] p-3 bg-white shadow-xl">
+            <div class="aspect-[4/5] overflow-hidden bg-stone-200">
+              <img 
+                src="assets/foto-tentang.jpg" 
+                alt="Portrait Della Arthamevia" 
+                onerror="this.onerror=null; this.src='assets/FOTO%20AKU%20.jpeg';"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              >
+            </div>
+            <div class="pt-3 pb-1 border-t border-[#141413]/20 mt-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase font-mono text-[#141413]">
+              <span>NO. 01 — PORTRAIT</span>
+              <span class="font-bold">DELLA ARTHAMEVIA, S.T.</span>
+            </div>
           </div>
         </div>
+
+        <!-- Kolom Kanan: Judul Besar, 2 Paragraf Utuh, & Grid Biodata 2x2 -->
+        <div class="lg:col-span-7 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#141413] leading-tight mb-8">
+              Halo, saya <span class="italic font-normal">Della Arthamevia</span>
+            </h3>
+
+            <!-- Paragraf 1 (Lengkap Sesuai Prompt) -->
+            <p class="text-sm md:text-base text-[#141413]/85 leading-relaxed mb-6 font-normal">
+              Halo, saya Della Arthamevia, lulusan S1 Teknik Kimia dari UPN 'Veteran' Jawa Timur dengan predikat Sangat Memuaskan (IPK 3,80/4,00). Selama masa studi, saya juga aktif dalam riset akademik dan berhasil mempublikasikan artikel ilmiah pada jurnal Serambi Engineering yang terindeks SINTA 4 (2026). Saya juga mengikuti program PKKM Studi Independen (Agustus 2023 – Desember 2023) di perusahaan konsultan lingkungan.
+            </p>
+
+            <!-- Paragraf 2 (Lengkap Sesuai Prompt) -->
+            <p class="text-sm md:text-base text-[#141413]/85 leading-relaxed mb-10 font-normal">
+              Saya memiliki ketertarikan dan pengalaman kuat di bidang teknik lingkungan dan proses industri, terbukti dari keterlibatan saya dalam penyusunan dokumen Pertek BMAL untuk berbagai perusahaan, penyusunan dokumen UKL-UPL, serta evaluasi unit produksi di industri gula nasional. Selain memiliki sertifikasi Ahli K3 Madya dari BNSP, saya juga menguasai produksi konten digital dengan jangkauan puluhan ribu audiens. Saya adalah pribadi yang analitis, sistematis, mudah beradaptasi, dan siap memberikan kontribusi terbaik di dalam tim.
+            </p>
+          </div>
+
+          <!-- Tabel / Grid Ringkasan Biodata 2x2 Dengan Garis Tipis -->
+          <div class="border border-[#141413] grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#141413] bg-white/50">
+            
+            <div class="p-5 sm:p-6 flex flex-col justify-between border-b sm:border-b border-[#141413]">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#141413]/50 font-mono mb-2">NAMA</span>
+              <span class="font-serif text-lg md:text-xl font-bold text-[#141413]">Della Arthamevia, S.T.</span>
+            </div>
+
+            <div class="p-5 sm:p-6 flex flex-col justify-between border-b border-[#141413]">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#141413]/50 font-mono mb-2">PENDIDIKAN</span>
+              <span class="font-sans text-xs md:text-sm font-semibold text-[#141413]">
+                S1 Teknik Kimia — UPN "Veteran" Jawa Timur <br>
+                <span class="text-[11px] font-normal text-[#141413]/70 font-mono">(IPK 3,80/4,00)</span>
+              </span>
+            </div>
+
+            <div class="p-5 sm:p-6 flex flex-col justify-between">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#141413]/50 font-mono mb-2">SERTIFIKASI UTAMA</span>
+              <span class="font-serif text-lg md:text-xl font-bold text-[#141413]">Ahli K3 Madya — BNSP</span>
+            </div>
+
+            <div class="p-5 sm:p-6 flex flex-col justify-between">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#141413]/50 font-mono mb-2">DOMISILI</span>
+              <span class="font-sans text-xs md:text-sm font-semibold text-[#141413]">Gresik, Jawa Timur, Indonesia</span>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="modal-footer">
-        <button id="modal-close-action" class="btn btn-secondary">Tutup Pratinjau</button>
-        <a id="modal-cert-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <span>🔗</span> Verifikasi Kredensial Resmi
-        </a>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAGIAN 3: "02 — PROYEK & STUDI KASUS PILIHAN"
+       ========================================================================= -->
+  <section id="proyek" class="py-20 md:py-32 border-b border-[#E2DFD2]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E2DFD2]">
+        <div>
+          <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60 mr-2">02</span>
+          <span class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">STUDI KASUS & REKAM JEJAK</span>
+          <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl text-[#141413] mt-3">
+            Proyek & <span class="italic font-normal">Studi Kasus Pilihan</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-[#141413]/70 max-w-sm font-normal">
+          Arahkan kursor untuk pratinjau visual dan klik baris proyek untuk membuka dokumen & studi kasus mendalam.
+        </p>
       </div>
+
+      <!-- Interactive Project List (01 to 05) -->
+      <div class="border-t border-[#141413] divide-y divide-[#141413]">
+        
+        <!-- PROYEK 01 -->
+        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+             data-hover
+             data-preview="assets/proyek-ukl-upl.jpg"
+             onclick="openProjectModal('proj-1')">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
+              (01)
+            </div>
+            <div class="col-span-10 md:col-span-7">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
+                Environmental Consulting (Freelance) • Maret – Juli 2026
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Penyusunan Dokumen UKL-UPL Proyek Fasilitas Olahraga & Rekreasi
+              </h3>
+            </div>
+            <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
+              DLH Surabaya • Survey Lapangan & Penyusunan Draft Regulasi
+            </div>
+            <div class="col-span-12 md:col-span-1 text-right mt-2 md:mt-0">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#141413]/30 group-hover:border-[#141413] group-hover:bg-[#141413] group-hover:text-[#F6F5F0] transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 02 -->
+        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+             data-hover
+             data-preview="assets/proyek-pertek.jpg"
+             onclick="openProjectModal('proj-2')">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
+              (02)
+            </div>
+            <div class="col-span-10 md:col-span-7">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
+                Environmental Engineering (PKKM Studi Independen – PT Mitra Hijau Indonesia) • Sep – Des 2023
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Penyusunan Dokumen Pertek BMAL untuk 5 Perusahaan
+              </h3>
+            </div>
+            <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
+              Removal Efficiency >10 Parameter Air Limbah • Evaluasi Kepatuhan
+            </div>
+            <div class="col-span-12 md:col-span-1 text-right mt-2 md:mt-0">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#141413]/30 group-hover:border-[#141413] group-hover:bg-[#141413] group-hover:text-[#F6F5F0] transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 03 -->
+        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+             data-hover
+             data-preview="assets/proyek-pkl.jpg"
+             onclick="openProjectModal('proj-3')">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
+              (03)
+            </div>
+            <div class="col-span-10 md:col-span-7">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
+                Process Engineering & HSE (PKL – PT Sinergi Gula Nusantara, PG Gempolkrep) • Juni – Juli 2024
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Evaluasi Kinerja Rotary Vacuum Filter (RVF) & Dokumentasi Lingkungan
+              </h3>
+            </div>
+            <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
+              Analisis Nira Kotor & Pol Blotong • Data Kualitas Udara Ambien
+            </div>
+            <div class="col-span-12 md:col-span-1 text-right mt-2 md:mt-0">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#141413]/30 group-hover:border-[#141413] group-hover:bg-[#141413] group-hover:text-[#F6F5F0] transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 04 -->
+        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+             data-hover
+             data-preview="assets/proyek-konten.jpg"
+             onclick="openProjectModal('proj-4')">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
+              (04)
+            </div>
+            <div class="col-span-10 md:col-span-7">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
+                Digital Content Creation (Full Time Contract – CV. Dari Teman Sejati) • Juni – Sep 2025
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Manajemen & Produksi Konten Digital 9 Akun Bisnis
+              </h3>
+            </div>
+            <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
+              25.000 Views Video Organik • Canva & CapCut Produksi Harian
+            </div>
+            <div class="col-span-12 md:col-span-1 text-right mt-2 md:mt-0">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#141413]/30 group-hover:border-[#141413] group-hover:bg-[#141413] group-hover:text-[#F6F5F0] transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 05 -->
+        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+             data-hover
+             data-preview="assets/proyek-jurnal.jpg"
+             onclick="openProjectModal('proj-5')">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
+              (05)
+            </div>
+            <div class="col-span-10 md:col-span-7">
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
+                Riset & Publikasi Akademik • Tahun 2026
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Publikasi Artikel Ilmiah Terindeks SINTA 4
+              </h3>
+            </div>
+            <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
+              Jurnal Serambi Engineering • Riset Terapan Teknik Kimia
+            </div>
+            <div class="col-span-12 md:col-span-1 text-right mt-2 md:mt-0">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#141413]/30 group-hover:border-[#141413] group-hover:bg-[#141413] group-hover:text-[#F6F5F0] transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAGIAN 4: "03 — KEAHLIAN & PERANGKAT" (Dark Section — #141413)
+       ========================================================================= -->
+  <section id="keahlian" class="py-24 md:py-36 bg-[#141413] text-[#F6F5F0] border-b border-[#282826]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex items-center gap-4 mb-16 pb-6 border-b border-[#282826]">
+        <span class="font-serif italic text-2xl md:text-3xl text-[#9E9E97]">03</span>
+        <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#F6F5F0]">
+          KEAHLIAN & PERANGKAT KERJA
+        </h2>
+      </div>
+
+      <div class="mb-14">
+        <h3 class="font-serif text-3xl sm:text-5xl md:text-6xl text-[#F6F5F0]">
+          Kompetensi Teruji & <span class="italic font-normal text-[#9E9E97]">Perangkat</span>
+        </h3>
+        <p class="text-sm md:text-base text-[#9E9E97] mt-3 max-w-xl font-normal">
+          Spektrum keahlian teknis teknik kimia dan lingkungan, kemahiran aplikasi digital, penguasaan bahasa, serta karakter personal pendukung kerja profesional.
+        </p>
+      </div>
+
+      <!-- 4 Kolom / Kartu Bergaya Editorial Minimalis -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Kartu 1: Keahlian Teknis (Hard Skills) -->
+        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
+              <i data-lucide="leaf" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-serif text-2xl text-[#F6F5F0] mb-4 font-semibold">Keahlian Teknis (Hard Skills)</h4>
+            <ul class="space-y-3.5 text-xs md:text-sm text-[#9E9E97] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Penyusunan Dokumen Lingkungan (UKL-UPL & Pertek BMAL)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Keselamatan dan Kesehatan Kerja (K3 Umum / Ahli K3 Madya)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Perencanaan & Produksi Konten Media Sosial (Content Planning, Video Editing, Graphic Design)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#282826] text-[10px] tracking-widest uppercase font-mono text-[#9E9E97]">
+            CAT. 01 — TECHNICAL
+          </div>
+        </div>
+
+        <!-- Kartu 2: Perangkat Lunak (Software) -->
+        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
+              <i data-lucide="laptop" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-serif text-2xl text-[#F6F5F0] mb-4 font-semibold">Perangkat Lunak (Software)</h4>
+            <ul class="space-y-3.5 text-xs md:text-sm text-[#9E9E97] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Microsoft Office (Word, Excel, PowerPoint)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Google Workspace (Google Docs, Sheets, Drive)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>Canva (termasuk pemanfaatan Canva AI)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F6F5F0] mt-0.5">✦</span>
+                <span>CapCut</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#282826] text-[10px] tracking-widest uppercase font-mono text-[#9E9E97]">
+            CAT. 02 — SOFTWARE
+          </div>
+        </div>
+
+        <!-- Kartu 3: Kemampuan Bahasa -->
+        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-serif text-2xl text-[#F6F5F0] mb-4 font-semibold">Kemampuan Bahasa</h4>
+            <ul class="space-y-4 text-xs md:text-sm text-[#9E9E97]">
+              <li class="border-b border-[#282826] pb-3">
+                <div class="text-[#F6F5F0] font-semibold text-sm">Bahasa Indonesia</div>
+                <div class="text-[11px] font-mono text-[#9E9E97] mt-0.5">Native / Penutur Asli</div>
+              </li>
+              <li class="pb-1">
+                <div class="text-[#F6F5F0] font-semibold text-sm">Bahasa Inggris</div>
+                <div class="text-[11px] font-mono text-[#9E9E97] mt-0.5">Intermediate / Menengah</div>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#282826] text-[10px] tracking-widest uppercase font-mono text-[#9E9E97]">
+            CAT. 03 — LANGUAGES
+          </div>
+        </div>
+
+        <!-- Kartu 4: Personal Skills (Soft Skills) -->
+        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-serif text-2xl text-[#F6F5F0] mb-4 font-semibold">Personal Skills</h4>
+            <ul class="space-y-2.5 text-xs md:text-sm text-[#9E9E97] leading-relaxed">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Berpikir Analitis & Sistematis</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Manajemen Waktu</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Tanggung Jawab</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Komunikatif</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Mudah Beradaptasi</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Disiplin</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F6F5F0]"></span>
+                <span>Kerja Sama Tim</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-[#282826] text-[10px] tracking-widest uppercase font-mono text-[#9E9E97]">
+            CAT. 04 — SOFT SKILLS
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAGIAN 5: "04 — GALERI SERTIFIKASI & PENGALAMAN ORGANISASI"
+       ========================================================================= -->
+  <section id="sertifikasi" class="py-20 md:py-32 border-b border-[#E2DFD2]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex items-center gap-4 mb-16 pb-4 border-b border-[#E2DFD2]">
+        <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60">04</span>
+        <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">
+          KREDENSIAL RESMI & KONTRIBUSI ORGANISASI
+        </h2>
+      </div>
+
+      <!-- =====================================================================
+           SUB-BAGIAN A: Galeri Lisensi & Sertifikasi (Grid 3 Kolom)
+           ===================================================================== -->
+      <div class="mb-24">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
+          <div>
+            <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 font-semibold block mb-1">BAGIAN 4A</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-[#141413] font-bold">
+              Lisensi & <span class="italic font-normal">Sertifikasi Resmi</span>
+            </h3>
+          </div>
+          <p class="text-xs text-[#141413]/60 font-mono tracking-wider">
+            [KLIK GAMBAR UNTUK MEMBESARKAN LIGHTBOX]
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Sertifikat 1: Ahli K3 Madya BNSP -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
+               onclick="openLightbox('assets/sertifikat-bnsp.jpg', 'Ahli K3 Madya', 'Badan Nasional Sertifikasi Profesi (BNSP)')" data-hover>
+            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
+              <img 
+                src="assets/sertifikat-bnsp.jpg" 
+                alt="Sertifikat Ahli K3 Madya BNSP" 
+                onerror="this.onerror=null; this.src='assets/Picture2.jpg';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="pt-4">
+              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">SERTIFIKASI NASIONAL</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Ahli K3 Madya</h4>
+              <p class="text-xs text-[#141413]/70 font-medium mt-1">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+            </div>
+          </div>
+
+          <!-- Sertifikat 2: Pelatihan Pengolahan Data UPN -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
+               onclick="openLightbox('assets/sertifikat-data.jpg', 'Pelatihan Pengolahan Data', 'UPN Veteran Jawa Timur')" data-hover>
+            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
+              <img 
+                src="assets/sertifikat-data.jpg" 
+                alt="Sertifikat Pelatihan Pengolahan Data UPN Veteran Jawa Timur" 
+                onerror="this.onerror=null; this.src='assets/Picture1.jpg';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="pt-4">
+              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">PELATIHAN TEKNIK</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Pelatihan Pengolahan Data</h4>
+              <p class="text-xs text-[#141413]/70 font-medium mt-1">UPN Veteran Jawa Timur</p>
+            </div>
+          </div>
+
+          <!-- Sertifikat 3: Kelas Canva AI -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
+               onclick="openLightbox('assets/sertifikat-canva.jpg', 'Kelas Canva AI', 'Empowering Muslimah')" data-hover>
+            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
+              <img 
+                src="assets/sertifikat-canva.jpg" 
+                alt="Sertifikat Kelas Canva AI Empowering Muslimah" 
+                onerror="this.onerror=null; this.src='assets/dts%20.jpeg';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="pt-4">
+              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">DIGITAL CREATIVE</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Kelas Canva AI</h4>
+              <p class="text-xs text-[#141413]/70 font-medium mt-1">Empowering Muslimah</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           SUB-BAGIAN B: Galeri Organisasi & Kepanitiaan (Kartu Kolase Foto)
+           ===================================================================== -->
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
+          <div>
+            <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 font-semibold block mb-1">BAGIAN 4B</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-[#141413] font-bold">
+              Galeri Organisasi & <span class="italic font-normal">Kepanitiaan</span>
+            </h3>
+          </div>
+          <p class="text-xs text-[#141413]/60 font-mono tracking-wider">
+            [KOLASE DOKUMENTASI KEGIATAN & PENGESAHAN]
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Organisasi 1: KKN Desa Klurak Sidoarjo -->
+          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+            <div>
+              <!-- Kolase 2 Foto: Kegiatan + Sertifikat -->
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/kegiatan-kkn.jpg', 'Dokumentasi Kegiatan KKN Desa Klurak', 'Sekretaris KKN')" data-hover>
+                  <img 
+                    src="assets/kegiatan-kkn.jpg" 
+                    alt="Kegiatan KKN Desa Klurak" 
+                    onerror="this.onerror=null; this.src='assets/KKN.jpeg';"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/sertifikat-kkn.jpg', 'Dokumentasi Pengesahan KKN Desa Klurak', 'Sertifikat KKN')" data-hover>
+                  <img 
+                    src="assets/sertifikat-kkn.jpg" 
+                    alt="Sertifikat KKN Desa Klurak" 
+                    onerror="this.onerror=null; this.src='assets/KKN%202.jpeg';"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+              </div>
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">Juli 2024 – Agustus 2024</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Sekretaris</h4>
+              <p class="text-xs font-semibold text-[#141413]/80 mt-0.5">Kuliah Kerja Nyata (KKN) Desa Klurak, Sidoarjo</p>
+              <p class="text-xs text-[#141413]/70 font-normal mt-3 leading-relaxed">
+                Mengelola administrasi, surat-menyurat, dan laporan pertanggungjawaban program kerja KKN di Desa Klurak.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-[#141413]/15 text-[10px] font-mono text-stone-500 uppercase tracking-widest">
+              ROLE: SECRETARY
+            </div>
+          </div>
+
+          <!-- Organisasi 2: Mahasiswa Al-Muhandis -->
+          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+            <div>
+              <!-- Kolase 2 Foto: Kegiatan + Sertifikat -->
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/kegiatan-kominfo.jpg', 'Dokumentasi Mahasiswa Al-Muhandis', 'Departemen Kominfo')" data-hover>
+                  <img 
+                    src="assets/kegiatan-kominfo.jpg" 
+                    alt="Kegiatan Kominfo Mahasiswa Al-Muhandis" 
+                    onerror="this.onerror=null; this.src='assets/Picture3.jpg';"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/sertifikat-kominfo.jpg', 'Media dan Publikasi Kominfo', 'Al-Muhandis')" data-hover>
+                  <img 
+                    src="assets/sertifikat-kominfo.jpg" 
+                    alt="Dokumentasi Kominfo" 
+                    onerror="this.onerror=null; this.src='assets/WhatsApp%20Image%202026-10-22%20at%2015.58.30.jpeg';"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+              </div>
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">Maret 2023 – Oktober 2024</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Departemen Kominfo</h4>
+              <p class="text-xs font-semibold text-[#141413]/80 mt-0.5">Mahasiswa Al-Muhandis</p>
+              <p class="text-xs text-[#141413]/70 font-normal mt-3 leading-relaxed">
+                Mengelola publikasi informasi dan media komunikasi organisasi mahasiswa.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-[#141413]/15 text-[10px] font-mono text-stone-500 uppercase tracking-widest">
+              ROLE: MEDIA & INFO
+            </div>
+          </div>
+
+          <!-- Organisasi 3: UKM Badminton -->
+          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+            <div>
+              <!-- Foto Kegiatan Tunggal / Kolase -->
+              <div class="aspect-[2/1] overflow-hidden bg-stone-100 border border-[#141413]/20 mb-4 cursor-pointer group"
+                   onclick="openLightbox('assets/kegiatan-badminton.jpg', 'UKM Badminton UPN Veteran Jawa Timur', 'Anggota Aktif')" data-hover>
+                <img 
+                  src="assets/kegiatan-badminton.jpg" 
+                  alt="Kegiatan UKM Badminton" 
+                  onerror="this.onerror=null; this.src='assets/UKM.jpeg';"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                >
+              </div>
+              <span class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">September 2021 – Oktober 2023</span>
+              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Anggota</h4>
+              <p class="text-xs font-semibold text-[#141413]/80 mt-0.5">UKM Badminton UPN "Veteran" Jawa Timur</p>
+              <p class="text-xs text-[#141413]/70 font-normal mt-3 leading-relaxed">
+                Aktif dalam kegiatan latihan rutin dan pengembangan minat bakat olahraga kampus.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-[#141413]/15 text-[10px] font-mono text-stone-500 uppercase tracking-widest">
+              ROLE: ACTIVE MEMBER
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       BAGIAN 6: "05 — KONTAK" (Footer Editorial Latar Hitam Arang #141413)
+       ========================================================================= -->
+  <footer id="kontak" class="bg-[#141413] text-[#F6F5F0] pt-24 pb-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <!-- Section Tag -->
+      <div class="flex items-center gap-3 mb-10 text-[11px] font-mono tracking-[0.25em] text-[#9E9E97] uppercase">
+        <span class="font-serif italic text-xl text-[#F6F5F0]">05</span>
+        <span>HUBUNGI & DISKUSI KERJASAMA</span>
+      </div>
+
+      <!-- Judul Besar Font Serif Italic -->
+      <div class="mb-16">
+        <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F6F5F0] font-normal leading-tight">
+          Terima kasih sudah <span class="italic font-light">mampir!</span>
+        </h2>
+        <p class="text-sm md:text-base text-[#9E9E97] mt-4 max-w-xl font-normal leading-relaxed">
+          Saya selalu terbuka untuk peluang karir penuh waktu, proyek konsultasi dokumen lingkungan, riset keteknikan, maupun kolaborasi kreatif. Silakan hubungi saya melalui saluran di bawah ini.
+        </p>
+      </div>
+
+      <!-- 4 Kotak Tautan Interaktif Berjajar dengan Panah ↗ di Sudut Kanan -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        
+        <!-- 1. Email -->
+        <a href="mailto:dellaarth37@gmail.com" 
+           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           data-hover>
+          <div class="flex items-center justify-between text-[#9E9E97]">
+            <span class="text-[10px] tracking-widest uppercase font-mono">01 / EMAIL</span>
+            <span class="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#F6F5F0]">↗</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-[#9E9E97] uppercase tracking-wider mb-1">KIRIM PESAN RESMI</div>
+            <div class="font-serif text-lg md:text-xl font-bold text-[#F6F5F0] group-hover:underline break-all">
+              dellaarth37@gmail.com
+            </div>
+          </div>
+        </a>
+
+        <!-- 2. Telepon / WhatsApp -->
+        <a href="https://wa.me/6285736425509?text=Halo%20Della%20Arthamevia,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           data-hover>
+          <div class="flex items-center justify-between text-[#9E9E97]">
+            <span class="text-[10px] tracking-widest uppercase font-mono">02 / TELEPON & WA</span>
+            <span class="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#F6F5F0]">↗</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-[#9E9E97] uppercase tracking-wider mb-1">CHAT INSTAN</div>
+            <div class="font-serif text-lg md:text-xl font-bold text-[#F6F5F0] group-hover:underline">
+              (+62) 857-3642-5509
+            </div>
+          </div>
+        </a>
+
+        <!-- 3. LinkedIn -->
+        <a href="https://www.linkedin.com/in/della-arthamevia" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           data-hover>
+          <div class="flex items-center justify-between text-[#9E9E97]">
+            <span class="text-[10px] tracking-widest uppercase font-mono">03 / LINKEDIN</span>
+            <span class="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#F6F5F0]">↗</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-[#9E9E97] uppercase tracking-wider mb-1">JARINGAN PROFESIONAL</div>
+            <div class="font-serif text-lg md:text-xl font-bold text-[#F6F5F0] group-hover:underline">
+              in/della-arthamevia
+            </div>
+          </div>
+        </a>
+
+        <!-- 4. Domisili -->
+        <div class="border border-[#282826] p-6 bg-[#1A1A18] flex flex-col justify-between min-h-[160px]">
+          <div class="flex items-center justify-between text-[#9E9E97]">
+            <span class="text-[10px] tracking-widest uppercase font-mono">04 / DOMISILI</span>
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#F6F5F0]"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-[#9E9E97] uppercase tracking-wider mb-1">LOKASI DASAR</div>
+            <div class="font-serif text-lg md:text-xl font-bold text-[#F6F5F0]">
+              Gresik, Jawa Timur
+            </div>
+            <div class="text-[11px] text-[#9E9E97] mt-0.5">Indonesia (Open Relocation)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tombol Kembali ke Atas & Info Copyright -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-12 border-t border-[#282826] text-xs font-mono text-[#9E9E97]">
+        <p>© 2026 DELLA ARTHAMEVIA, S.T. — ALL RIGHTS RESERVED.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-[#F6F5F0] transition-colors flex items-center gap-2 group py-2" data-hover>
+          <span>KEMBALI KE ATAS</span>
+          <span class="group-hover:-translate-y-1 transition-transform font-sans">↑</span>
+        </button>
+      </div>
+
+      <!-- Teks Raksasa Memenuhi Layar: DELLA ARTHAMEVIA -->
+      <div class="w-full text-center select-none pt-4 overflow-hidden">
+        <span class="font-serif font-bold text-[13.5vw] leading-[0.78] tracking-[-0.03em] text-[#F6F5F0] opacity-90 block uppercase whitespace-nowrap">
+          DELLA ARTHAMEVIA
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DIALOG POP-UP UNTUK DETAIL PROYEK
+       ========================================================================= -->
+  <dialog id="project-modal" class="p-0 bg-transparent text-[#141413] max-w-3xl w-[94vw] rounded-none outline-none">
+    <div class="bg-[#F6F5F0] border-2 border-[#141413] shadow-2xl p-6 md:p-10 relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 w-10 h-10 border border-[#141413] flex items-center justify-center hover:bg-[#141413] hover:text-[#F6F5F0] transition-colors" data-hover aria-label="Tutup Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Content Header -->
+      <div class="mb-6 pr-10">
+        <span id="modal-category" class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-[#141413]/60 block mb-1">
+          KATEGORI
+        </span>
+        <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#141413]">
+          Judul Proyek
+        </h3>
+        <p id="modal-period" class="text-xs font-mono text-[#141413]/70 mt-1">
+          Periode Pelaksanaan
+        </p>
+      </div>
+
+      <!-- Modal Visual Preview -->
+      <div class="border border-[#141413] bg-stone-200 mb-6 overflow-hidden">
+        <img id="modal-image" src="" alt="Bukti Visual Proyek" class="w-full max-h-80 object-cover">
+      </div>
+
+      <!-- Modal Description & Role -->
+      <div class="mb-8">
+        <h4 class="text-[11px] tracking-[0.2em] uppercase font-mono font-bold text-[#141413]/70 mb-2">
+          DESKRIPSI & TANGGUNG JAWAB UTAMA:
+        </h4>
+        <p id="modal-description" class="text-sm md:text-base text-[#141413]/85 leading-relaxed font-normal mb-4">
+          Deskripsi lengkap proyek...
+        </p>
+        <div id="modal-impact-container" class="hidden p-4 border-l-2 border-[#141413] bg-white text-xs md:text-sm text-[#141413]/90 font-medium">
+          <strong>Hasil & Dampak:</strong> <span id="modal-impact"></span>
+        </div>
+      </div>
+
+      <!-- Modal Actions -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#141413]/20">
+        <a id="modal-link-btn" href="#" target="_blank" rel="noopener noreferrer" class="py-3 px-6 bg-[#141413] text-[#F6F5F0] text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors inline-flex items-center gap-2" data-hover>
+          <span>Buka Berkas / Tautan</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+        <button onclick="closeProjectModal()" class="py-3 px-6 border border-[#141413] text-xs uppercase tracking-widest font-semibold hover:bg-[#141413] hover:text-[#F6F5F0] transition-colors" data-hover>
+          Tutup Jendela
+        </button>
+      </div>
+
     </div>
   </dialog>
 
-  <!-- Wadah Toast Notifikasi -->
-  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <!-- =========================================================================
+       LIGHTBOX POP-UP UNTUK SERTIFIKAT & FOTO KEGIATAN
+       ========================================================================= -->
+  <dialog id="lightbox-modal" class="p-0 bg-transparent text-[#F6F5F0] max-w-4xl w-[95vw] rounded-none outline-none">
+    <div class="bg-[#141413] border border-[#F6F5F0]/30 shadow-2xl p-4 md:p-8 relative max-h-[92vh] flex flex-col items-center">
+      
+      <!-- Close Button -->
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 border border-[#F6F5F0]/50 text-[#F6F5F0] flex items-center justify-center hover:bg-[#F6F5F0] hover:text-[#141413] transition-colors" data-hover aria-label="Tutup Lightbox">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
 
-  <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+      <!-- Lightbox Image Frame -->
+      <div class="w-full flex items-center justify-center overflow-hidden my-4">
+        <img id="lightbox-img" src="" alt="Pratinjau Kredensial" class="max-h-[70vh] w-auto max-w-full object-contain border border-[#F6F5F0]/20">
+      </div>
+
+      <!-- Caption & Title -->
+      <div class="w-full text-center mt-2 px-4">
+        <h4 id="lightbox-title" class="font-serif text-xl md:text-2xl font-bold text-[#F6F5F0]">Judul</h4>
+        <p id="lightbox-caption" class="text-xs text-[#9E9E97] font-mono mt-1 tracking-wider uppercase">Penerbit / Keterangan</p>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Data Lengkap Proyek untuk Modal Pop-up (5 Proyek Sesuai Instruksi)
+    const projectDatabase = {
+      'proj-1': {
+        title: "Penyusunan Dokumen UKL-UPL Proyek Fasilitas Olahraga & Rekreasi",
+        category: "Environmental Consulting (Freelance)",
+        period: "Maret – Juli 2026",
+        description: "Bertindak sebagai narahubung (liaison) dengan Dinas Lingkungan Hidup (DLH) Surabaya terkait koordinasi dan kelengkapan perubahan dokumen UKL-UPL. Melakukan survei lokasi langsung untuk pengumpulan data primer/sekunder, serta menyusun dan merevisi draf dokumen UKL-UPL melalui evaluasi berkala setiap minggu.",
+        image: "assets/proyek-ukl-upl.jpg",
+        link: "assets/Cover Dokumen UKL UPL.pdf",
+        linkText: "Buka Sampul Dokumen UKL-UPL (PDF)",
+        impact: "Koordinasi kelengkapan dokumen dengan DLH Surabaya berjalan tepat waktu dan draf berhasil disempurnakan sesuai seluruh rekomendasi mentor."
+      },
+      'proj-2': {
+        title: "Penyusunan Dokumen Pertek BMAL untuk 5 Perusahaan",
+        category: "Environmental Engineering (PKKM Studi Independen – PT Mitra Hijau Indonesia)",
+        period: "September – Desember 2023",
+        description: "Menyusun dokumen Persetujuan Teknis Pemenuhan Baku Mutu Air Limbah (Pertek BMAL) untuk 5 perusahaan. Melakukan studi literatur dan kajian teknis efisiensi penyisihan (removal efficiency) untuk >10 parameter pencemar pada berbagai unit pengolahan air limbah, serta melewati >4 kali tahap evaluasi ketat demi memastikan kepatuhan regulasi sebelum dokumen final dikumpulkan.",
+        image: "assets/proyek-pertek.jpg",
+        link: "assets/proyek-pertek.jpg",
+        linkText: "Lihat Dokumentasi Proyek",
+        impact: "Dokumen teknis Pertek BMAL untuk 5 industri tersusun secara akurat dan memenuhi parameter baku mutu lingkungan hidup."
+      },
+      'proj-3': {
+        title: "Evaluasi Kinerja Rotary Vacuum Filter (RVF) & Dokumentasi Lingkungan",
+        category: "Process Engineering & HSE (PKL – PT Sinergi Gula Nusantara, PG Gempolkrep)",
+        period: "Juni – Juli 2024",
+        description: "Mengamati alur proses produksi pabrik gula di setiap stasiun dan mengambil data operasional selama 15 hari berturut-turut (16–30 Juni 2024) untuk mengevaluasi kinerja alat Rotary Vacuum Filter (RVF) melalui analisis jumlah nira kotor dan pol blotong. Turut membantu tim lingkungan dalam mengunggah dan mengarsipkan data kualitas udara ambien ke sistem berbasis web.",
+        image: "assets/proyek-pkl.jpg",
+        link: "assets/proyek-pkl.jpg",
+        linkText: "Lihat Dokumentasi Pabrik Gula",
+        impact: "Menghasilkan evaluasi kinerja alat filtrasi secara kuantitatif serta pengarsipan data kualitas udara ambien yang rapi terorganisir."
+      },
+      'proj-4': {
+        title: "Manajemen & Produksi Konten Digital 9 Akun Bisnis",
+        category: "Digital Content Creation (Full Time Contract – CV. Dari Teman Sejati)",
+        period: "Juni – September 2025",
+        description: "Merancang ide dan kalender konten bulanan untuk 9 akun bisnis berbeda (3 kafe, 4 produk herbal, 1 pertanian, dan 1 destinasi wisata) di Instagram dan TikTok. Memproduksi, mengambil video di lokasi, dan menyunting konten menggunakan Canva dan CapCut dengan target rilis harian pada 5 dari 9 akun.",
+        image: "assets/proyek-konten.jpg",
+        link: "assets/proyek-konten.jpg",
+        linkText: "Lihat Bukti Insight 25k Views",
+        impact: "Berhasil meraih jangkauan hingga 25.000 penayangan (views) dan menargetkan pertumbuhan followers organik sekitar 100–150 akun per bulan."
+      },
+      'proj-5': {
+        title: "Publikasi Artikel Ilmiah Terindeks SINTA 4 (2026)",
+        category: "Riset & Publikasi Akademik",
+        period: "Tahun 2026",
+        description: "Penulis artikel ilmiah bidang Teknik Kimia yang diterbitkan pada Jurnal Serambi Engineering (Terindeks SINTA 4) tahun 2026. Riset difokuskan pada pengolahan dan efisiensi proses keteknikan.",
+        image: "assets/proyek-jurnal.jpg",
+        link: "assets/proyek-jurnal.jpg",
+        linkText: "Buka Tangkapan Layar Jurnal Serambi Engineering",
+        impact: "Kontribusi riset akademik teknik kimia yang terindeks resmi pada pangkalan data ilmiah nasional SINTA 4."
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inisialisasi Ikon Lucide
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // 1. Preloader Timeout (1.8 Detik)
+      const preloader = document.getElementById("preloader");
+      const preloaderBar = document.getElementById("preloader-bar");
+      
+      if (preloaderBar) {
+        setTimeout(() => {
+          preloaderBar.style.width = "100%";
+        }, 100);
+      }
+
+      setTimeout(() => {
+        if (preloader) {
+          preloader.classList.add("opacity-0", "pointer-events-none");
+          setTimeout(() => preloader.style.display = "none", 700);
+        }
+      }, 1800);
+
+      // 2. Custom Cursor Logic (Difference Blend Mode)
+      const cursorDot = document.getElementById("cursor-dot");
+      const cursorOutline = document.getElementById("cursor-outline");
+
+      if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let outlineX = mouseX;
+        let outlineY = mouseY;
+
+        window.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursorDot.style.left = `${mouseX}px`;
+          cursorDot.style.top = `${mouseY}px`;
+        });
+
+        function animateCursor() {
+          outlineX += (mouseX - outlineX) * 0.15;
+          outlineY += (mouseY - outlineY) * 0.15;
+          cursorOutline.style.left = `${outlineX}px`;
+          cursorOutline.style.top = `${outlineY}px`;
+          requestAnimationFrame(animateCursor);
+        }
+        requestAnimationFrame(animateCursor);
+
+        // Hover scale listeners
+        const interactiveElements = document.querySelectorAll("a, button, [data-hover], .project-row");
+        interactiveElements.forEach(el => {
+          el.addEventListener("mouseenter", () => document.body.classList.add("cursor-active"));
+          el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-active"));
+        });
+      }
+
+      // 3. Floating Project Preview Hover Logic
+      const floatingPreview = document.getElementById("floating-project-preview");
+      const floatingImg = document.getElementById("floating-project-img");
+      const projectRows = document.querySelectorAll(".project-row");
+
+      projectRows.forEach(row => {
+        row.addEventListener("mouseenter", (e) => {
+          const previewSrc = row.getAttribute("data-preview");
+          if (previewSrc && floatingImg && floatingPreview) {
+            floatingImg.src = previewSrc;
+            floatingPreview.classList.remove("opacity-0", "scale-95");
+            floatingPreview.classList.add("opacity-100", "scale-100");
+          }
+        });
+
+        row.addEventListener("mousemove", (e) => {
+          if (floatingPreview) {
+            const xOffset = 25;
+            const yOffset = 25;
+            let targetX = e.clientX + xOffset;
+            let targetY = e.clientY + yOffset;
+
+            // Boundary check
+            if (targetX + 300 > window.innerWidth) {
+              targetX = e.clientX - 310;
+            }
+            if (targetY + 200 > window.innerHeight) {
+              targetY = e.clientY - 190;
+            }
+
+            floatingPreview.style.left = `${targetX}px`;
+            floatingPreview.style.top = `${targetY}px`;
+          }
+        });
+
+        row.addEventListener("mouseleave", () => {
+          if (floatingPreview) {
+            floatingPreview.classList.remove("opacity-100", "scale-100");
+            floatingPreview.classList.add("opacity-0", "scale-95");
+          }
+        });
+      });
+
+      // 4. Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        document.querySelectorAll(".mobile-nav-link").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      }
+    });
+
+    // 5. Project Modal Handler
+    function openProjectModal(projectId) {
+      const modal = document.getElementById("project-modal");
+      const data = projectDatabase[projectId];
+      if (!modal || !data) return;
+
+      document.getElementById("modal-category").textContent = data.category;
+      document.getElementById("modal-title").textContent = data.title;
+      document.getElementById("modal-period").textContent = `Periode: ${data.period}`;
+      document.getElementById("modal-description").textContent = data.description;
+      
+      const imgElem = document.getElementById("modal-image");
+      imgElem.src = data.image;
+      imgElem.onerror = function() {
+        this.src = "assets/FOTO%20AKU%20.jpeg";
+      };
+
+      const impactContainer = document.getElementById("modal-impact-container");
+      const impactText = document.getElementById("modal-impact");
+      if (data.impact) {
+        impactText.textContent = data.impact;
+        impactContainer.classList.remove("hidden");
+      } else {
+        impactContainer.classList.add("hidden");
+      }
+
+      const linkBtn = document.getElementById("modal-link-btn");
+      if (data.link) {
+        linkBtn.href = data.link;
+        linkBtn.classList.remove("hidden");
+      } else {
+        linkBtn.classList.add("hidden");
+      }
+
+      modal.showModal();
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById("project-modal");
+      if (modal) {
+        modal.close();
+        document.body.style.overflow = "auto";
+      }
+    }
+
+    // Close modal on backdrop click
+    document.getElementById("project-modal")?.addEventListener("click", (e) => {
+      const modal = document.getElementById("project-modal");
+      const rect = modal.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        closeProjectModal();
+      }
+    });
+
+    // 6. Lightbox Handler
+    function openLightbox(imgSrc, title, caption) {
+      const lightbox = document.getElementById("lightbox-modal");
+      if (!lightbox) return;
+
+      const imgElem = document.getElementById("lightbox-img");
+      imgElem.src = imgSrc;
+      imgElem.onerror = function() {
+        this.src = "assets/FOTO%20AKU%20.jpeg";
+      };
+
+      document.getElementById("lightbox-title").textContent = title || "Kredensial Portofolio";
+      document.getElementById("lightbox-caption").textContent = caption || "Dokumentasi Resmi Della Arthamevia";
+
+      lightbox.showModal();
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox-modal");
+      if (lightbox) {
+        lightbox.close();
+        document.body.style.overflow = "auto";
+      }
+    }
+
+    document.getElementById("lightbox-modal")?.addEventListener("click", (e) => {
+      const lightbox = document.getElementById("lightbox-modal");
+      const rect = lightbox.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
