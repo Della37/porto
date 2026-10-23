@@ -132,6 +132,49 @@
       background: rgba(20, 20, 19, 0.82);
       backdrop-filter: blur(8px);
     }
+
+    /* =========================================================================
+       EDITORIAL SCROLL MOTION SYSTEM (TWO-WAY REVEAL)
+       Terinspirasi dari faril-porto.netlify.app (Fade up & subtle scale with two-way reset)
+       ========================================================================= */
+    .editorial-reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .editorial-reveal-scale {
+      opacity: 0;
+      transform: translateY(32px) scale(0.96);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    /* Active State when in viewport */
+    .editorial-reveal.is-revealed,
+    .editorial-reveal-scale.is-revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Cascading Stagger Delays for Grid & List Elements */
+    .stagger-1 { transition-delay: 60ms; }
+    .stagger-2 { transition-delay: 130ms; }
+    .stagger-3 { transition-delay: 200ms; }
+    .stagger-4 { transition-delay: 270ms; }
+    .stagger-5 { transition-delay: 340ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .editorial-reveal,
+      .editorial-reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body class="antialiased text-[#141413] bg-[#F6F5F0]">
@@ -345,7 +388,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
       <!-- Section Header -->
-      <div class="flex items-center gap-4 mb-12 md:mb-16 pb-4 border-b border-[#E2DFD2]">
+      <div class="editorial-reveal flex items-center gap-4 mb-12 md:mb-16 pb-4 border-b border-[#E2DFD2]">
         <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60">01</span>
         <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">
           PROFIL & BIOGRAFI
@@ -356,7 +399,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         <!-- Kolom Kiri: Bingkai Foto Potret Diri (FOTO AKU) -->
-        <div class="lg:col-span-5">
+        <div class="lg:col-span-5 editorial-reveal-scale">
           <div class="border border-[#141413] p-3 bg-white shadow-xl">
             <div class="aspect-[4/5] overflow-hidden bg-stone-200">
               <img 
@@ -376,23 +419,23 @@
         <!-- Kolom Kanan: Judul Besar, 2 Paragraf Utuh, & Grid Biodata 2x2 -->
         <div class="lg:col-span-7 flex flex-col justify-between">
           <div>
-            <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#141413] leading-tight mb-8">
+            <h3 class="editorial-reveal font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#141413] leading-tight mb-8">
               Halo, saya <span class="italic font-normal">Della Arthamevia</span>
             </h3>
 
             <!-- Paragraf 1 (Lengkap Sesuai Prompt) -->
-            <p class="text-sm md:text-base text-[#141413]/85 leading-relaxed mb-6 font-normal">
+            <p class="editorial-reveal stagger-1 text-sm md:text-base text-[#141413]/85 leading-relaxed mb-6 font-normal">
               Halo, saya Della Arthamevia, lulusan S1 Teknik Kimia dari UPN 'Veteran' Jawa Timur dengan predikat Sangat Memuaskan (IPK 3,80/4,00). Selama masa studi, saya juga aktif dalam riset akademik dan berhasil mempublikasikan artikel ilmiah pada jurnal Serambi Engineering yang terindeks SINTA 4 (2026). Saya juga mengikuti program PKKM Studi Independen (Agustus 2023 – Desember 2023) di perusahaan konsultan lingkungan.
             </p>
 
             <!-- Paragraf 2 (Lengkap Sesuai Prompt) -->
-            <p class="text-sm md:text-base text-[#141413]/85 leading-relaxed mb-10 font-normal">
+            <p class="editorial-reveal stagger-2 text-sm md:text-base text-[#141413]/85 leading-relaxed mb-10 font-normal">
               Saya memiliki ketertarikan dan pengalaman kuat di bidang teknik lingkungan dan proses industri, terbukti dari keterlibatan saya dalam penyusunan dokumen Pertek BMAL untuk berbagai perusahaan, penyusunan dokumen UKL-UPL, serta evaluasi unit produksi di industri gula nasional. Selain memiliki sertifikasi Ahli K3 Madya dari BNSP, saya juga menguasai produksi konten digital dengan jangkauan puluhan ribu audiens. Saya adalah pribadi yang analitis, sistematis, mudah beradaptasi, dan siap memberikan kontribusi terbaik di dalam tim.
             </p>
           </div>
 
           <!-- Tabel / Grid Ringkasan Biodata 2x2 Dengan Garis Tipis -->
-          <div class="border border-[#141413] grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#141413] bg-white/50">
+          <div class="editorial-reveal-scale stagger-3 border border-[#141413] grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#141413] bg-white/50">
             
             <div class="p-5 sm:p-6 flex flex-col justify-between border-b sm:border-b border-[#141413]">
               <span class="text-[10px] tracking-[0.2em] uppercase font-bold text-[#141413]/50 font-mono mb-2">NAMA</span>
@@ -433,7 +476,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E2DFD2]">
+      <div class="editorial-reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E2DFD2]">
         <div>
           <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60 mr-2">02</span>
           <span class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">STUDI KASUS & REKAM JEJAK</span>
@@ -450,7 +493,7 @@
       <div class="border-t border-[#141413] divide-y divide-[#141413]">
         
         <!-- PROYEK 01: UKL-UPL -->
-        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+        <div class="editorial-reveal stagger-1 project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
              data-preview="assets/Survey lokasi.jpeg"
              onclick="openProjectModal('proj-1')">
@@ -478,7 +521,7 @@
         </div>
 
         <!-- PROYEK 02: PERTEK BMAL (kegiatan pkkm) -->
-        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+        <div class="editorial-reveal stagger-2 project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
              data-preview="assets/kegiatan pkkm.jpg"
              onclick="openProjectModal('proj-2')">
@@ -506,7 +549,7 @@
         </div>
 
         <!-- PROYEK 03: PKL RVF (PKL) -->
-        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+        <div class="editorial-reveal stagger-3 project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
              data-preview="assets/PKL.jpeg"
              onclick="openProjectModal('proj-3')">
@@ -534,7 +577,7 @@
         </div>
 
         <!-- PROYEK 04: KONTEN KREATOR DTS (Video PROYEK DTS 1) -->
-        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+        <div class="editorial-reveal stagger-4 project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
              data-preview="assets/PROYEK DTS 2.jpeg"
              onclick="openProjectModal('proj-4')">
@@ -565,7 +608,7 @@
         </div>
 
         <!-- PROYEK 05: SINTA 4 JURNAL -->
-        <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
+        <div class="editorial-reveal stagger-5 project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
              data-preview="assets/jurnal ss.jpeg"
              onclick="openProjectModal('proj-5')">
@@ -604,14 +647,14 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
       <!-- Section Header -->
-      <div class="flex items-center gap-4 mb-16 pb-6 border-b border-[#282826]">
+      <div class="editorial-reveal flex items-center gap-4 mb-16 pb-6 border-b border-[#282826]">
         <span class="font-serif italic text-2xl md:text-3xl text-[#9E9E97]">03</span>
         <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#F6F5F0]">
           KEAHLIAN & PERANGKAT KERJA
         </h2>
       </div>
 
-      <div class="mb-14">
+      <div class="editorial-reveal stagger-1 mb-14">
         <h3 class="font-serif text-3xl sm:text-5xl md:text-6xl text-[#F6F5F0]">
           Kompetensi Teruji & <span class="italic font-normal text-[#9E9E97]">Perangkat</span>
         </h3>
@@ -624,7 +667,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Kartu 1: Keahlian Teknis (Hard Skills) -->
-        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+        <div class="editorial-reveal-scale stagger-1 border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
               <i data-lucide="leaf" class="w-5 h-5"></i>
@@ -651,7 +694,7 @@
         </div>
 
         <!-- Kartu 2: Perangkat Lunak (Software) -->
-        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+        <div class="editorial-reveal-scale stagger-2 border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
               <i data-lucide="laptop" class="w-5 h-5"></i>
@@ -682,7 +725,7 @@
         </div>
 
         <!-- Kartu 3: Kemampuan Bahasa -->
-        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+        <div class="editorial-reveal-scale stagger-3 border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
               <i data-lucide="globe" class="w-5 h-5"></i>
@@ -705,7 +748,7 @@
         </div>
 
         <!-- Kartu 4: Personal Skills (Soft Skills) -->
-        <div class="border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
+        <div class="editorial-reveal-scale stagger-4 border border-[#282826] p-7 bg-[#1A1A18] hover:border-[#F6F5F0]/40 transition-colors duration-300 flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-none border border-[#F6F5F0]/20 flex items-center justify-center text-[#F6F5F0] mb-6">
               <i data-lucide="sparkles" class="w-5 h-5"></i>
@@ -759,7 +802,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
       <!-- Section Header -->
-      <div class="flex items-center gap-4 mb-16 pb-4 border-b border-[#E2DFD2]">
+      <div class="editorial-reveal flex items-center gap-4 mb-16 pb-4 border-b border-[#E2DFD2]">
         <span class="font-serif italic text-2xl md:text-3xl font-light text-[#141413]/60">04</span>
         <h2 class="text-xs md:text-sm font-sans font-bold tracking-[0.25em] uppercase text-[#141413]">
           KREDENSIAL RESMI & KONTRIBUSI ORGANISASI
@@ -770,7 +813,7 @@
            SUB-BAGIAN A: Galeri Lisensi & Sertifikasi (Grid 3 Kolom)
            ===================================================================== -->
       <div class="mb-24">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
+        <div class="editorial-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
           <div>
             <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 font-semibold block mb-1">BAGIAN 4A</span>
             <h3 class="font-serif text-3xl md:text-4xl text-[#141413] font-bold">
@@ -785,7 +828,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Sertifikat 1: Ahli K3 Madya (sertif ahli k3 1 dan sertif ahli k3 2) -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div class="editorial-reveal-scale stagger-1 border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
             <div>
               <!-- Kolase 2 Halaman: Depan & Belakang -->
               <div class="grid grid-cols-2 gap-2 mb-3">
@@ -829,7 +872,7 @@
           </div>
 
           <!-- Sertifikat 2: Pelatihan Pengolahan Data UPN (Sertifikat Pengolahan) -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div class="editorial-reveal-scale stagger-2 border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
             <div>
               <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
                    onclick="openLightbox('assets/Sertifikat_Kegiatan_Pelatihan_Pengolahan_Data_page-0001.jpg', 'Sertifikat Pelatihan Pengolahan Data', 'UPN Veteran Jawa Timur')" data-hover>
@@ -858,7 +901,7 @@
           </div>
 
           <!-- Sertifikat 3: Kelas Canva AI (KELAS CANVA AI) -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div class="editorial-reveal-scale stagger-3 border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
             <div>
               <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
                    onclick="openLightbox('assets/KELAS%20CANVA%20AI.jpeg', 'Kelas Canva AI — Panduan Desain', 'Empowering Muslimah')" data-hover>
@@ -891,7 +934,7 @@
            SUB-BAGIAN B: Galeri Organisasi & Kepanitiaan (Kartu Kolase Foto)
            ===================================================================== -->
       <div>
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
+        <div class="editorial-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-3 border-b border-[#E2DFD2]/60">
           <div>
             <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 font-semibold block mb-1">BAGIAN 4B</span>
             <h3 class="font-serif text-3xl md:text-4xl text-[#141413] font-bold">
@@ -906,7 +949,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Organisasi 1: KKN Desa Klurak Sidoarjo -->
-          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+          <div class="editorial-reveal-scale stagger-1 border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
               <div class="grid grid-cols-2 gap-2 mb-4">
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
@@ -939,7 +982,7 @@
           </div>
 
           <!-- Organisasi 2: Mahasiswa Al-Muhandis (MAHASISWA AL-MUHANDIS) -->
-          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+          <div class="editorial-reveal-scale stagger-2 border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
               <div class="aspect-[2/1] overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group mb-4"
                    onclick="openLightbox('assets/MAHASISWA%20AL-MUHANDIS.jpeg', 'Kegiatan Forum Mahasiswa Al-Muhandis', 'Departemen Kominfo')" data-hover>
@@ -962,7 +1005,7 @@
           </div>
 
           <!-- Organisasi 3: UKM Badminton (UKM + UKM 2) -->
-          <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
+          <div class="editorial-reveal-scale stagger-3 border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
               <div class="grid grid-cols-2 gap-2 mb-4">
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
@@ -1007,13 +1050,13 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
       <!-- Section Tag -->
-      <div class="flex items-center gap-3 mb-10 text-[11px] font-mono tracking-[0.25em] text-[#9E9E97] uppercase">
+      <div class="editorial-reveal flex items-center gap-3 mb-10 text-[11px] font-mono tracking-[0.25em] text-[#9E9E97] uppercase">
         <span class="font-serif italic text-xl text-[#F6F5F0]">05</span>
         <span>HUBUNGI & DISKUSI KERJASAMA</span>
       </div>
 
       <!-- Judul Besar Font Serif Italic -->
-      <div class="mb-16">
+      <div class="editorial-reveal stagger-1 mb-16">
         <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F6F5F0] font-normal leading-tight">
           Terima kasih sudah <span class="italic font-light">mampir!</span>
         </h2>
@@ -1027,7 +1070,7 @@
         
         <!-- 1. Email -->
         <a href="mailto:dellaarth37@gmail.com" 
-           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           class="editorial-reveal-scale stagger-1 group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
            data-hover>
           <div class="flex items-center justify-between text-[#9E9E97]">
             <span class="text-[10px] tracking-widest uppercase font-mono">01 / EMAIL</span>
@@ -1045,7 +1088,7 @@
         <a href="https://wa.me/6285736425509?text=Halo%20Della%20Arthamevia,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi." 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           class="editorial-reveal-scale stagger-2 group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
            data-hover>
           <div class="flex items-center justify-between text-[#9E9E97]">
             <span class="text-[10px] tracking-widest uppercase font-mono">02 / TELEPON & WA</span>
@@ -1063,7 +1106,7 @@
         <a href="https://www.linkedin.com/in/della-arthamevia" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
+           class="editorial-reveal-scale stagger-3 group border border-[#282826] p-6 bg-[#1A1A18] hover:border-[#F6F5F0] transition-all duration-300 flex flex-col justify-between min-h-[160px]" 
            data-hover>
           <div class="flex items-center justify-between text-[#9E9E97]">
             <span class="text-[10px] tracking-widest uppercase font-mono">03 / LINKEDIN</span>
@@ -1078,7 +1121,7 @@
         </a>
 
         <!-- 4. Domisili -->
-        <div class="border border-[#282826] p-6 bg-[#1A1A18] flex flex-col justify-between min-h-[160px]">
+        <div class="editorial-reveal-scale stagger-4 border border-[#282826] p-6 bg-[#1A1A18] flex flex-col justify-between min-h-[160px]">
           <div class="flex items-center justify-between text-[#9E9E97]">
             <span class="text-[10px] tracking-widest uppercase font-mono">04 / DOMISILI</span>
             <i data-lucide="map-pin" class="w-4 h-4 text-[#F6F5F0]"></i>
@@ -1095,7 +1138,7 @@
       </div>
 
       <!-- Tombol Kembali ke Atas & Info Copyright -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-12 border-t border-[#282826] text-xs font-mono text-[#9E9E97]">
+      <div class="editorial-reveal stagger-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-12 border-t border-[#282826] text-xs font-mono text-[#9E9E97]">
         <p>© 2026 DELLA ARTHAMEVIA, S.T. — ALL RIGHTS RESERVED.</p>
         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-[#F6F5F0] transition-colors flex items-center gap-2 group py-2" data-hover>
           <span>KEMBALI KE ATAS</span>
@@ -1104,7 +1147,7 @@
       </div>
 
       <!-- Teks Raksasa Memenuhi Layar: DELLA ARTHAMEVIA -->
-      <div class="w-full text-center select-none pt-4 overflow-hidden">
+      <div class="editorial-reveal stagger-3 w-full text-center select-none pt-4 overflow-hidden">
         <span class="font-serif font-bold text-[13.5vw] leading-[0.78] tracking-[-0.03em] text-[#F6F5F0] opacity-90 block uppercase whitespace-nowrap">
           DELLA ARTHAMEVIA
         </span>
@@ -1399,6 +1442,30 @@
             mobileMenu.classList.add("hidden");
           });
         });
+      }
+
+      // 5. Editorial Two-Way Scroll Motion (Inspired by faril-porto.netlify.app)
+      const motionElements = document.querySelectorAll('.editorial-reveal, .editorial-reveal-scale');
+      if ('IntersectionObserver' in window) {
+        const motionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+            } else {
+              // Hilang kembali saat elemen meninggalkan layar (atas maupun bawah)
+              entry.target.classList.remove('is-revealed');
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.08
+        });
+
+        motionElements.forEach(el => motionObserver.observe(el));
+      } else {
+        // Fallback untuk browser lawas tanpa IntersectionObserver
+        motionElements.forEach(el => el.classList.add('is-revealed'));
       }
     });
 
