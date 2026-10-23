@@ -129,7 +129,7 @@
 
     /* Modal Backdrop Transitions */
     dialog::backdrop {
-      background: rgba(20, 20, 19, 0.78);
+      background: rgba(20, 20, 19, 0.82);
       backdrop-filter: blur(8px);
     }
   </style>
@@ -266,7 +266,7 @@
         </div>
       </div>
 
-      <!-- Center: Tipografi Raksasa & Overlapping Profile Photo (Magazine Cover Stacking) -->
+      <!-- Center: Tipografi Raksasa & Overlapping Profile Photo (FOTO SAMPUL TANPA BACKGROUND) -->
       <div class="relative my-8 md:my-14 flex flex-col items-center justify-center min-h-[380px] md:min-h-[580px]">
         
         <!-- Big Serif Display "DELLA" (Belakang Foto) -->
@@ -276,23 +276,14 @@
           </h1>
         </div>
 
-        <!-- Overlapping Profile Photo (Tepat di tengah menumpuk teks DELLA) -->
-        <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 md:w-80 lg:w-96 group">
-          <div class="relative p-2 md:p-3 bg-[#F6F5F0] border border-[#141413]/25 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <div class="aspect-[3/4] overflow-hidden bg-stone-300 relative">
-              <img 
-                src="assets/foto-profil.jpg" 
-                alt="Della Arthamevia, S.T." 
-                onerror="this.onerror=null; this.src='assets/FOTO%20AKU%20.jpeg';"
-                class="w-full h-full object-cover grayscale contrast-105 hover:grayscale-0 transition-all duration-700"
-              >
-            </div>
-            <!-- Small Editorial Caption under photo -->
-            <div class="pt-2 px-1 flex items-center justify-between text-[9px] md:text-[10px] tracking-widest uppercase font-mono text-[#141413]/70">
-              <span>FIG. 01 — COVER</span>
-              <span>UPN "VETERAN" JATIM</span>
-            </div>
-          </div>
+        <!-- Overlapping Profile Photo (FOTO SAMPUL TANPA BACKGROUND) -->
+        <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 sm:w-72 md:w-88 lg:w-96 flex items-center justify-center pointer-events-auto">
+          <img 
+            src="assets/FOTO%20SAMPUL%20TANPA%20BACKGROUND.jpeg" 
+            alt="Della Arthamevia, S.T. — Foto Sampul" 
+            onerror="this.onerror=null; this.src='assets/foto-profil.jpg';"
+            class="w-full h-auto max-h-[460px] md:max-h-[560px] object-contain drop-shadow-2xl mx-auto hover:scale-105 transition-transform duration-700"
+          >
         </div>
 
         <!-- Teks Italic "Arthamevia" di bawah DELLA -->
@@ -325,7 +316,7 @@
           </a>
           <a href="assets/cv-della.pdf" download class="w-full text-center py-3.5 px-6 border border-[#141413] text-[#141413] text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#141413] hover:text-[#F6F5F0] transition-all duration-200 flex items-center justify-center gap-2" data-hover>
             <i data-lucide="file-text" class="w-4 h-4"></i>
-            <span>Unduh CV (PDF)</span>
+            <span>Unduh CV (PDF Terbaru)</span>
           </a>
           <a href="#kontak" class="w-full text-center py-3.5 px-6 border border-[#141413]/40 text-[#141413] text-xs uppercase tracking-[0.2em] font-medium hover:border-[#141413] hover:bg-[#141413]/5 transition-all duration-200" data-hover>
             <span>Hubungi Saya</span>
@@ -364,14 +355,14 @@
       <!-- Layout 2 Kolom Gaya Artikel Majalah -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
-        <!-- Kolom Kiri: Bingkai Foto Potret Diri -->
+        <!-- Kolom Kiri: Bingkai Foto Potret Diri (FOTO AKU) -->
         <div class="lg:col-span-5">
           <div class="border border-[#141413] p-3 bg-white shadow-xl">
             <div class="aspect-[4/5] overflow-hidden bg-stone-200">
               <img 
-                src="assets/foto-tentang.jpg" 
+                src="assets/FOTO%20AKU%20.jpeg" 
                 alt="Portrait Della Arthamevia" 
-                onerror="this.onerror=null; this.src='assets/FOTO%20AKU%20.jpeg';"
+                onerror="this.onerror=null; this.src='assets/foto-tentang.jpg';"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               >
             </div>
@@ -451,17 +442,17 @@
           </h2>
         </div>
         <p class="text-xs md:text-sm text-[#141413]/70 max-w-sm font-normal">
-          Arahkan kursor untuk pratinjau visual dan klik baris proyek untuk membuka dokumen & studi kasus mendalam.
+          Arahkan kursor untuk pratinjau visual dan klik baris proyek untuk membuka galeri berkas & studi kasus mendalam.
         </p>
       </div>
 
       <!-- Interactive Project List (01 to 05) -->
       <div class="border-t border-[#141413] divide-y divide-[#141413]">
         
-        <!-- PROYEK 01 -->
+        <!-- PROYEK 01: UKL-UPL -->
         <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
-             data-preview="assets/proyek-ukl-upl.jpg"
+             data-preview="assets/Survey lokasi.jpeg"
              onclick="openProjectModal('proj-1')">
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
@@ -486,10 +477,10 @@
           </div>
         </div>
 
-        <!-- PROYEK 02 -->
+        <!-- PROYEK 02: PERTEK BMAL (kegiatan pkkm) -->
         <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
-             data-preview="assets/proyek-pertek.jpg"
+             data-preview="assets/kegiatan pkkm.jpg"
              onclick="openProjectModal('proj-2')">
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
@@ -514,10 +505,10 @@
           </div>
         </div>
 
-        <!-- PROYEK 03 -->
+        <!-- PROYEK 03: PKL RVF (PKL) -->
         <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
-             data-preview="assets/proyek-pkl.jpg"
+             data-preview="assets/PKL.jpeg"
              onclick="openProjectModal('proj-3')">
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
@@ -542,10 +533,10 @@
           </div>
         </div>
 
-        <!-- PROYEK 04 -->
+        <!-- PROYEK 04: KONTEN KREATOR DTS (Video PROYEK DTS 1) -->
         <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
-             data-preview="assets/proyek-konten.jpg"
+             data-preview="assets/PROYEK DTS 2.jpeg"
              onclick="openProjectModal('proj-4')">
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
@@ -555,8 +546,11 @@
               <span class="text-[10px] tracking-[0.2em] uppercase font-mono text-[#141413]/60 block mb-1">
                 Digital Content Creation (Full Time Contract – CV. Dari Teman Sejati) • Juni – Sep 2025
               </span>
-              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Manajemen & Produksi Konten Digital 9 Akun Bisnis
+              <h3 class="font-serif text-xl sm:text-2xl md:text-3xl text-[#141413] font-semibold group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+                <span>Manajemen & Produksi Konten Digital 9 Akun Bisnis</span>
+                <span class="inline-flex items-center gap-1 text-[10px] font-mono tracking-wider bg-rose-100 text-rose-800 px-2 py-0.5 rounded-none border border-rose-300">
+                  <i data-lucide="play" class="w-3 h-3 fill-current"></i> VIDEO
+                </span>
               </h3>
             </div>
             <div class="hidden md:block col-span-3 text-xs text-[#141413]/70 font-normal">
@@ -570,10 +564,10 @@
           </div>
         </div>
 
-        <!-- PROYEK 05 -->
+        <!-- PROYEK 05: SINTA 4 JURNAL -->
         <div class="project-row group py-7 md:py-9 cursor-pointer transition-colors duration-200 hover:bg-[#141413]/[0.03] px-2 md:px-4"
              data-hover
-             data-preview="assets/proyek-jurnal.jpg"
+             data-preview="assets/jurnal ss.jpeg"
              onclick="openProjectModal('proj-5')">
           <div class="grid grid-cols-12 gap-4 items-center">
             <div class="col-span-2 md:col-span-1 font-serif italic text-2xl md:text-3xl text-[#141413]/60 group-hover:text-[#141413] transition-colors">
@@ -790,66 +784,103 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <!-- Sertifikat 1: Ahli K3 Madya BNSP -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
-               onclick="openLightbox('assets/sertifikat-bnsp.jpg', 'Ahli K3 Madya', 'Badan Nasional Sertifikasi Profesi (BNSP)')" data-hover>
-            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
-              <img 
-                src="assets/sertifikat-bnsp.jpg" 
-                alt="Sertifikat Ahli K3 Madya BNSP" 
-                onerror="this.onerror=null; this.src='assets/Picture2.jpg';"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+          <!-- Sertifikat 1: Ahli K3 Madya (sertif ahli k3 1 dan sertif ahli k3 2) -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <!-- Kolase 2 Halaman: Depan & Belakang -->
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="aspect-[3/4] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
+                     onclick="openLightbox('assets/sertif ahli k3 1.jpeg', 'Sertifikat Kompetensi Ahli K3 Madya (Halaman Depan)', 'Badan Nasional Sertifikasi Profesi (BNSP)')" data-hover>
+                  <img 
+                    src="assets/sertif%20ahli%20k3%201.jpeg" 
+                    alt="Sertifikat Ahli K3 Madya BNSP Halaman Depan" 
+                    onerror="this.onerror=null; this.src='assets/sertifikat-bnsp.jpg';"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  >
+                  <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                    <i data-lucide="zoom-in" class="w-6 h-6"></i>
+                  </div>
+                </div>
+                <div class="aspect-[3/4] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
+                     onclick="openLightbox('assets/sertif ahli k3 2.jpeg', 'Daftar Unit Kompetensi Ahli K3 Madya (Halaman Belakang)', 'Badan Nasional Sertifikasi Profesi (BNSP)')" data-hover>
+                  <img 
+                    src="assets/sertif%20ahli%20k3%202.jpeg" 
+                    alt="Sertifikat Ahli K3 Madya BNSP Halaman Belakang" 
+                    onerror="this.onerror=null; this.src='assets/sertifikat-bnsp.jpg';"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  >
+                  <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                    <i data-lucide="zoom-in" class="w-6 h-6"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-2">
+                <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">SERTIFIKASI NASIONAL BNSP</span>
+                <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Ahli K3 Madya</h4>
+                <p class="text-xs text-[#141413]/70 font-medium mt-1">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+                <p class="text-[11px] text-[#141413]/60 font-mono mt-1">2 Halaman (Sertifikat & 20 Unit Kompetensi)</p>
               </div>
             </div>
-            <div class="pt-4">
-              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">SERTIFIKASI NASIONAL</span>
-              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Ahli K3 Madya</h4>
-              <p class="text-xs text-[#141413]/70 font-medium mt-1">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+            <div class="pt-4 mt-3 border-t border-[#141413]/10">
+              <a href="assets/Sertifikat%20Ahli%20K3%20Madya.pdf" target="_blank" class="text-[11px] font-mono text-[#141413] underline hover:text-stone-600 flex items-center gap-1" data-hover>
+                <span>Buka Dokumen Lengkap (PDF)</span> <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Sertifikat 2: Pelatihan Pengolahan Data UPN -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
-               onclick="openLightbox('assets/sertifikat-data.jpg', 'Pelatihan Pengolahan Data', 'UPN Veteran Jawa Timur')" data-hover>
-            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
-              <img 
-                src="assets/sertifikat-data.jpg" 
-                alt="Sertifikat Pelatihan Pengolahan Data UPN Veteran Jawa Timur" 
-                onerror="this.onerror=null; this.src='assets/Picture1.jpg';"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+          <!-- Sertifikat 2: Pelatihan Pengolahan Data UPN (Sertifikat Pengolahan) -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
+                   onclick="openLightbox('assets/Sertifikat_Kegiatan_Pelatihan_Pengolahan_Data_page-0001.jpg', 'Sertifikat Pelatihan Pengolahan Data', 'UPN Veteran Jawa Timur')" data-hover>
+                <img 
+                  src="assets/Sertifikat_Kegiatan_Pelatihan_Pengolahan_Data_page-0001.jpg" 
+                  alt="Sertifikat Pelatihan Pengolahan Data UPN Veteran Jawa Timur" 
+                  onerror="this.onerror=null; this.src='assets/Sertifikat%20Pengolahan.jpg';"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                >
+                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                  <i data-lucide="zoom-in" class="w-8 h-8"></i>
+                </div>
+              </div>
+              <div class="pt-4">
+                <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">PELATIHAN TEKNIK</span>
+                <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Pelatihan Pengolahan Data</h4>
+                <p class="text-xs text-[#141413]/70 font-medium mt-1">UPN Veteran Jawa Timur</p>
+                <p class="text-[11px] text-[#141413]/60 font-mono mt-1">Program Studi Teknik Kimia</p>
               </div>
             </div>
-            <div class="pt-4">
-              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">PELATIHAN TEKNIK</span>
-              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Pelatihan Pengolahan Data</h4>
-              <p class="text-xs text-[#141413]/70 font-medium mt-1">UPN Veteran Jawa Timur</p>
+            <div class="pt-4 mt-3 border-t border-[#141413]/10">
+              <a href="assets/Sertifikat%20Pengolahan.pdf" target="_blank" class="text-[11px] font-mono text-[#141413] underline hover:text-stone-600 flex items-center gap-1" data-hover>
+                <span>Buka Dokumen PDF Resmi</span> <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Sertifikat 3: Kelas Canva AI -->
-          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
-               onclick="openLightbox('assets/sertifikat-canva.jpg', 'Kelas Canva AI', 'Empowering Muslimah')" data-hover>
-            <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative">
-              <img 
-                src="assets/sertifikat-canva.jpg" 
-                alt="Sertifikat Kelas Canva AI Empowering Muslimah" 
-                onerror="this.onerror=null; this.src='assets/dts%20.jpeg';"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                <i data-lucide="zoom-in" class="w-8 h-8"></i>
+          <!-- Sertifikat 3: Kelas Canva AI (KELAS CANVA AI) -->
+          <div class="border border-[#141413] p-4 bg-white shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-[#141413]/20 relative cursor-pointer"
+                   onclick="openLightbox('assets/KELAS%20CANVA%20AI.jpeg', 'Kelas Canva AI — Panduan Desain', 'Empowering Muslimah')" data-hover>
+                <img 
+                  src="assets/KELAS%20CANVA%20AI.jpeg" 
+                  alt="Sertifikat & Panduan Kelas Canva AI Empowering Muslimah" 
+                  onerror="this.onerror=null; this.src='assets/sertifikat-canva.jpg';"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                >
+                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                  <i data-lucide="zoom-in" class="w-8 h-8"></i>
+                </div>
+              </div>
+              <div class="pt-4">
+                <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">DIGITAL CREATIVE</span>
+                <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Kelas Canva AI</h4>
+                <p class="text-xs text-[#141413]/70 font-medium mt-1">Empowering Muslimah</p>
+                <p class="text-[11px] text-[#141413]/60 font-mono mt-1">Byendara x Empowering Muslimah</p>
               </div>
             </div>
-            <div class="pt-4">
-              <span class="text-[9px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">DIGITAL CREATIVE</span>
-              <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Kelas Canva AI</h4>
-              <p class="text-xs text-[#141413]/70 font-medium mt-1">Empowering Muslimah</p>
+            <div class="pt-4 mt-3 border-t border-[#141413]/10">
+              <span class="text-[11px] font-mono text-stone-500">Kredensial Desain Terverifikasi</span>
             </div>
           </div>
 
@@ -877,23 +908,20 @@
           <!-- Organisasi 1: KKN Desa Klurak Sidoarjo -->
           <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
-              <!-- Kolase 2 Foto: Kegiatan + Sertifikat -->
               <div class="grid grid-cols-2 gap-2 mb-4">
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
-                     onclick="openLightbox('assets/kegiatan-kkn.jpg', 'Dokumentasi Kegiatan KKN Desa Klurak', 'Sekretaris KKN')" data-hover>
+                     onclick="openLightbox('assets/KKN.jpeg', 'Dokumentasi Kegiatan KKN Desa Klurak', 'Sekretaris KKN')" data-hover>
                   <img 
-                    src="assets/kegiatan-kkn.jpg" 
+                    src="assets/KKN.jpeg" 
                     alt="Kegiatan KKN Desa Klurak" 
-                    onerror="this.onerror=null; this.src='assets/KKN.jpeg';"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   >
                 </div>
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
-                     onclick="openLightbox('assets/sertifikat-kkn.jpg', 'Dokumentasi Pengesahan KKN Desa Klurak', 'Sertifikat KKN')" data-hover>
+                     onclick="openLightbox('assets/KKN%202.jpeg', 'Dokumentasi Pengesahan KKN Desa Klurak', 'Sertifikat KKN')" data-hover>
                   <img 
-                    src="assets/sertifikat-kkn.jpg" 
+                    src="assets/KKN%202.jpeg" 
                     alt="Sertifikat KKN Desa Klurak" 
-                    onerror="this.onerror=null; this.src='assets/KKN%202.jpeg';"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   >
                 </div>
@@ -910,26 +938,23 @@
             </div>
           </div>
 
-          <!-- Organisasi 2: Mahasiswa Al-Muhandis -->
+          <!-- Organisasi 2: Mahasiswa Al-Muhandis (MAHASISWA AL-MUHANDIS) -->
           <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
-              <!-- Kolase 2 Foto: Kegiatan + Sertifikat -->
               <div class="grid grid-cols-2 gap-2 mb-4">
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
-                     onclick="openLightbox('assets/kegiatan-kominfo.jpg', 'Dokumentasi Mahasiswa Al-Muhandis', 'Departemen Kominfo')" data-hover>
+                     onclick="openLightbox('assets/MAHASISWA%20AL-MUHANDIS.jpeg', 'Kegiatan Forum Mahasiswa Al-Muhandis', 'Departemen Kominfo')" data-hover>
                   <img 
-                    src="assets/kegiatan-kominfo.jpg" 
-                    alt="Kegiatan Kominfo Mahasiswa Al-Muhandis" 
-                    onerror="this.onerror=null; this.src='assets/Picture3.jpg';"
+                    src="assets/MAHASISWA%20AL-MUHANDIS.jpeg" 
+                    alt="Kegiatan Forum Mahasiswa Al-Muhandis" 
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   >
                 </div>
                 <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
-                     onclick="openLightbox('assets/sertifikat-kominfo.jpg', 'Media dan Publikasi Kominfo', 'Al-Muhandis')" data-hover>
+                     onclick="openLightbox('assets/WhatsApp%20Image%202026-10-22%20at%2015.58.30.jpeg', 'Dokumentasi Publikasi Al-Muhandis', 'Media & Publikasi')" data-hover>
                   <img 
-                    src="assets/sertifikat-kominfo.jpg" 
-                    alt="Dokumentasi Kominfo" 
-                    onerror="this.onerror=null; this.src='assets/WhatsApp%20Image%202026-10-22%20at%2015.58.30.jpeg';"
+                    src="assets/WhatsApp%20Image%202026-10-22%20at%2015.58.30.jpeg" 
+                    alt="Dokumentasi Media Kominfo" 
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   >
                 </div>
@@ -946,18 +971,26 @@
             </div>
           </div>
 
-          <!-- Organisasi 3: UKM Badminton -->
+          <!-- Organisasi 3: UKM Badminton (UKM + UKM 2) -->
           <div class="border border-[#141413] bg-white p-5 flex flex-col justify-between shadow-lg">
             <div>
-              <!-- Foto Kegiatan Tunggal / Kolase -->
-              <div class="aspect-[2/1] overflow-hidden bg-stone-100 border border-[#141413]/20 mb-4 cursor-pointer group"
-                   onclick="openLightbox('assets/kegiatan-badminton.jpg', 'UKM Badminton UPN Veteran Jawa Timur', 'Anggota Aktif')" data-hover>
-                <img 
-                  src="assets/kegiatan-badminton.jpg" 
-                  alt="Kegiatan UKM Badminton" 
-                  onerror="this.onerror=null; this.src='assets/UKM.jpeg';"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                >
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/UKM.jpeg', 'Latihan Rutin UKM Badminton', 'Anggota Aktif')" data-hover>
+                  <img 
+                    src="assets/UKM.jpeg" 
+                    alt="Kegiatan UKM Badminton Lapangan" 
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+                <div class="aspect-square overflow-hidden bg-stone-100 border border-[#141413]/20 cursor-pointer group"
+                     onclick="openLightbox('assets/UKM%202.jpeg', 'Sesi Evaluasi dan Kebersamaan UKM Badminton', 'Anggota Aktif')" data-hover>
+                  <img 
+                    src="assets/UKM%202.jpeg" 
+                    alt="Kegiatan Anggota UKM Badminton 2" 
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
               </div>
               <span class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-stone-500 block mb-1">September 2021 – Oktober 2023</span>
               <h4 class="font-serif text-2xl font-bold text-[#141413] leading-snug">Anggota</h4>
@@ -1091,7 +1124,7 @@
   </footer>
 
   <!-- =========================================================================
-       MODAL DIALOG POP-UP UNTUK DETAIL PROYEK
+       MODAL DIALOG POP-UP UNTUK DETAIL PROYEK & GALERI BERKAS
        ========================================================================= -->
   <dialog id="project-modal" class="p-0 bg-transparent text-[#141413] max-w-3xl w-[94vw] rounded-none outline-none">
     <div class="bg-[#F6F5F0] border-2 border-[#141413] shadow-2xl p-6 md:p-10 relative max-h-[90vh] overflow-y-auto">
@@ -1114,28 +1147,38 @@
         </p>
       </div>
 
-      <!-- Modal Visual Preview -->
-      <div class="border border-[#141413] bg-stone-200 mb-6 overflow-hidden">
-        <img id="modal-image" src="" alt="Bukti Visual Proyek" class="w-full max-h-80 object-cover">
+      <!-- Modal Media Container (Supports Video or Image) -->
+      <div id="modal-media-wrapper" class="border border-[#141413] bg-stone-200 mb-6 overflow-hidden">
+        <!-- Disuntikkan dinamis oleh JS: <img> atau <video> -->
       </div>
 
       <!-- Modal Description & Role -->
       <div class="mb-8">
         <h4 class="text-[11px] tracking-[0.2em] uppercase font-mono font-bold text-[#141413]/70 mb-2">
-          DESKRIPSI & TANGGUNG JAWAB UTAMA:
+          DESKRIPSI & TANGGUNG JAWAWAB UTAMA:
         </h4>
         <p id="modal-description" class="text-sm md:text-base text-[#141413]/85 leading-relaxed font-normal mb-4">
           Deskripsi lengkap proyek...
         </p>
-        <div id="modal-impact-container" class="hidden p-4 border-l-2 border-[#141413] bg-white text-xs md:text-sm text-[#141413]/90 font-medium">
+        <div id="modal-impact-container" class="hidden p-4 border-l-2 border-[#141413] bg-white text-xs md:text-sm text-[#141413]/90 font-medium mb-4">
           <strong>Hasil & Dampak:</strong> <span id="modal-impact"></span>
+        </div>
+
+        <!-- Galeri Berkas / Bukti Visual Tambahan -->
+        <div id="modal-attachments-section" class="mt-6 pt-6 border-t border-[#141413]/15">
+          <h5 class="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-[#141413]/70 mb-3">
+            BERKAS & BUKTI VISUAL TERLAMPIR (KLIK UNTUK MEMPERBESAR):
+          </h5>
+          <div id="modal-attachments-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <!-- Diisi otomatis oleh JavaScript -->
+          </div>
         </div>
       </div>
 
       <!-- Modal Actions -->
       <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#141413]/20">
         <a id="modal-link-btn" href="#" target="_blank" rel="noopener noreferrer" class="py-3 px-6 bg-[#141413] text-[#F6F5F0] text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors inline-flex items-center gap-2" data-hover>
-          <span>Buka Berkas / Tautan</span>
+          <span id="modal-link-text">Buka Berkas / Tautan</span>
           <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
         <button onclick="closeProjectModal()" class="py-3 px-6 border border-[#141413] text-xs uppercase tracking-widest font-semibold hover:bg-[#141413] hover:text-[#F6F5F0] transition-colors" data-hover>
@@ -1173,26 +1216,37 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Data Lengkap Proyek untuk Modal Pop-up (5 Proyek Sesuai Instruksi)
+    // Database Proyek Terintegrasi dengan Bukti Visual & Video Asli
     const projectDatabase = {
       'proj-1': {
         title: "Penyusunan Dokumen UKL-UPL Proyek Fasilitas Olahraga & Rekreasi",
         category: "Environmental Consulting (Freelance)",
         period: "Maret – Juli 2026",
         description: "Bertindak sebagai narahubung (liaison) dengan Dinas Lingkungan Hidup (DLH) Surabaya terkait koordinasi dan kelengkapan perubahan dokumen UKL-UPL. Melakukan survei lokasi langsung untuk pengumpulan data primer/sekunder, serta menyusun dan merevisi draf dokumen UKL-UPL melalui evaluasi berkala setiap minggu.",
-        image: "assets/proyek-ukl-upl.jpg",
+        image: "assets/Survey lokasi.jpeg",
+        video: null,
+        attachments: [
+          { src: "assets/Survey lokasi.jpeg", title: "Survey Lapangan UKL-UPL Surabaya" },
+          { src: "assets/WhatsApp Image 2026-10-22 at 15.51.19.jpeg", title: "Formulir Survey Dokumen Lingkungan Resmi" }
+        ],
         link: "assets/Cover Dokumen UKL UPL.pdf",
-        linkText: "Buka Sampul Dokumen UKL-UPL (PDF)",
-        impact: "Koordinasi kelengkapan dokumen dengan DLH Surabaya berjalan tepat waktu dan draf berhasil disempurnakan sesuai seluruh rekomendasi mentor."
+        linkText: "Buka Dokumen UKL-UPL (PDF)",
+        impact: "Koordinasi kelengkapan dokumen dengan DLH Surabaya berjalan tepat waktu dan draf berhasil disempurnakan sesuai seluruh masukan mentor."
       },
       'proj-2': {
         title: "Penyusunan Dokumen Pertek BMAL untuk 5 Perusahaan",
         category: "Environmental Engineering (PKKM Studi Independen – PT Mitra Hijau Indonesia)",
         period: "September – Desember 2023",
         description: "Menyusun dokumen Persetujuan Teknis Pemenuhan Baku Mutu Air Limbah (Pertek BMAL) untuk 5 perusahaan. Melakukan studi literatur dan kajian teknis efisiensi penyisihan (removal efficiency) untuk >10 parameter pencemar pada berbagai unit pengolahan air limbah, serta melewati >4 kali tahap evaluasi ketat demi memastikan kepatuhan regulasi sebelum dokumen final dikumpulkan.",
-        image: "assets/proyek-pertek.jpg",
-        link: "assets/proyek-pertek.jpg",
-        linkText: "Lihat Dokumentasi Proyek",
+        image: "assets/kegiatan pkkm.jpg",
+        video: null,
+        attachments: [
+          { src: "assets/kegiatan pkkm.jpg", title: "Kegiatan PKKM: Analisis Data & Kajian Teknis" },
+          { src: "assets/kegiatan pkkm 2.jpg", title: "Kegiatan PKKM 2: Forum Diskusi & Evaluasi Mentor" },
+          { src: "assets/kegiatan pkkm 3.jpg", title: "Kegiatan PKKM 3: Tim Studi Independen PT Mitra Hijau Indonesia" }
+        ],
+        link: "assets/kegiatan pkkm 3.jpg",
+        linkText: "Buka Dokumentasi Tim PT Mitra Hijau",
         impact: "Dokumen teknis Pertek BMAL untuk 5 industri tersusun secara akurat dan memenuhi parameter baku mutu lingkungan hidup."
       },
       'proj-3': {
@@ -1200,9 +1254,15 @@
         category: "Process Engineering & HSE (PKL – PT Sinergi Gula Nusantara, PG Gempolkrep)",
         period: "Juni – Juli 2024",
         description: "Mengamati alur proses produksi pabrik gula di setiap stasiun dan mengambil data operasional selama 15 hari berturut-turut (16–30 Juni 2024) untuk mengevaluasi kinerja alat Rotary Vacuum Filter (RVF) melalui analisis jumlah nira kotor dan pol blotong. Turut membantu tim lingkungan dalam mengunggah dan mengarsipkan data kualitas udara ambien ke sistem berbasis web.",
-        image: "assets/proyek-pkl.jpg",
-        link: "assets/proyek-pkl.jpg",
-        linkText: "Lihat Dokumentasi Pabrik Gula",
+        image: "assets/PKL.jpeg",
+        video: null,
+        attachments: [
+          { src: "assets/PKL.jpeg", title: "Observasi Operasional Stasiun Filtrasi Pabrik Gula" },
+          { src: "assets/pkl sertif.jpeg", title: "Sertifikat Resmi PKL PG Gempolkrep (PT Sinergi Gula Nusantara)" },
+          { src: "assets/PKL 2.jpeg", title: "Praktik Kerja Lapangan 2: Pemantauan Unit Produksi" }
+        ],
+        link: "assets/pkl sertif.jpeg",
+        linkText: "Buka Sertifikat Resmi PKL Pabrik Gula",
         impact: "Menghasilkan evaluasi kinerja alat filtrasi secara kuantitatif serta pengarsipan data kualitas udara ambien yang rapi terorganisir."
       },
       'proj-4': {
@@ -1210,9 +1270,14 @@
         category: "Digital Content Creation (Full Time Contract – CV. Dari Teman Sejati)",
         period: "Juni – September 2025",
         description: "Merancang ide dan kalender konten bulanan untuk 9 akun bisnis berbeda (3 kafe, 4 produk herbal, 1 pertanian, dan 1 destinasi wisata) di Instagram dan TikTok. Memproduksi, mengambil video di lokasi, dan menyunting konten menggunakan Canva dan CapCut dengan target rilis harian pada 5 dari 9 akun.",
-        image: "assets/proyek-konten.jpg",
-        link: "assets/proyek-konten.jpg",
-        linkText: "Lihat Bukti Insight 25k Views",
+        image: "assets/PROYEK DTS 2.jpeg",
+        video: "assets/PROYEK DTS 1.mp4",
+        attachments: [
+          { src: "assets/PROYEK DTS 2.jpeg", title: "Tangkapan Layar Insight Video TikTok Mencapai 25 Ribu Views" },
+          { src: "assets/PROYEK DTS 3.jpeg", title: "Produksi Konten Harian CV. Dari Teman Sejati" }
+        ],
+        link: "assets/PROYEK DTS 1.mp4",
+        linkText: "Buka Berkas Video Promosi (MP4)",
         impact: "Berhasil meraih jangkauan hingga 25.000 penayangan (views) dan menargetkan pertumbuhan followers organik sekitar 100–150 akun per bulan."
       },
       'proj-5': {
@@ -1220,9 +1285,13 @@
         category: "Riset & Publikasi Akademik",
         period: "Tahun 2026",
         description: "Penulis artikel ilmiah bidang Teknik Kimia yang diterbitkan pada Jurnal Serambi Engineering (Terindeks SINTA 4) tahun 2026. Riset difokuskan pada pengolahan dan efisiensi proses keteknikan.",
-        image: "assets/proyek-jurnal.jpg",
-        link: "assets/proyek-jurnal.jpg",
-        linkText: "Buka Tangkapan Layar Jurnal Serambi Engineering",
+        image: "assets/jurnal ss.jpeg",
+        video: null,
+        attachments: [
+          { src: "assets/jurnal ss.jpeg", title: "Tangkapan Layar Halaman Jurnal Serambi Engineering (SINTA 4)" }
+        ],
+        link: "assets/jurnal ss.jpeg",
+        linkText: "Buka Tangkapan Layar Halaman Jurnal",
         impact: "Kontribusi riset akademik teknik kimia yang terindeks resmi pada pangkalan data ilmiah nasional SINTA 4."
       }
     };
@@ -1343,7 +1412,7 @@
       }
     });
 
-    // 5. Project Modal Handler
+    // 5. Project Modal Handler (Mendukung Video dan Galeri Lampiran)
     function openProjectModal(projectId) {
       const modal = document.getElementById("project-modal");
       const data = projectDatabase[projectId];
@@ -1354,12 +1423,28 @@
       document.getElementById("modal-period").textContent = `Periode: ${data.period}`;
       document.getElementById("modal-description").textContent = data.description;
       
-      const imgElem = document.getElementById("modal-image");
-      imgElem.src = data.image;
-      imgElem.onerror = function() {
-        this.src = "assets/FOTO%20AKU%20.jpeg";
-      };
+      const mediaWrapper = document.getElementById("modal-media-wrapper");
+      if (data.video) {
+        // Tampilkan Video Player Interaktif
+        mediaWrapper.innerHTML = `
+          <div class="relative w-full bg-black">
+            <video src="${data.video}" controls autoplay loop muted playsinline class="w-full max-h-80 object-contain mx-auto">
+              Peramban Anda tidak mendukung pemutar video HTML5.
+            </video>
+            <div class="p-2 bg-stone-900 text-[10px] font-mono text-[#F6F5F0] flex items-center justify-between">
+              <span>▶ VIDEO PROMOSI CV. DARI TEMAN SEJATI</span>
+              <span>FORMAT: MP4</span>
+            </div>
+          </div>
+        `;
+      } else {
+        // Tampilkan Gambar
+        mediaWrapper.innerHTML = `
+          <img src="${data.image}" alt="${data.title}" onerror="this.src='assets/FOTO%20AKU%20.jpeg';" class="w-full max-h-80 object-cover">
+        `;
+      }
 
+      // Impact container
       const impactContainer = document.getElementById("modal-impact-container");
       const impactText = document.getElementById("modal-impact");
       if (data.impact) {
@@ -1369,12 +1454,40 @@
         impactContainer.classList.add("hidden");
       }
 
+      // Galeri Lampiran Berkas / Bukti Visual
+      const attachmentsGrid = document.getElementById("modal-attachments-grid");
+      if (data.attachments && data.attachments.length > 0) {
+        attachmentsGrid.innerHTML = data.attachments.map(att => `
+          <div class="group/att border border-[#141413]/30 bg-white p-2 cursor-pointer hover:border-[#141413] transition-all shadow-sm"
+               onclick="openLightbox('${att.src}', '${att.title.replace(/'/g, "\\'")}', '${data.title.replace(/'/g, "\\'")}')" data-hover>
+            <div class="aspect-[4/3] overflow-hidden bg-stone-100 mb-1.5 relative">
+              <img src="${att.src}" alt="${att.title}" class="w-full h-full object-cover group-hover/att:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover/att:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="text-[10px] font-mono text-[#141413] font-semibold truncate" title="${att.title}">${att.title}</p>
+          </div>
+        `).join("");
+        document.getElementById("modal-attachments-section").classList.remove("hidden");
+      } else {
+        document.getElementById("modal-attachments-section").classList.add("hidden");
+      }
+
+      // Link button
       const linkBtn = document.getElementById("modal-link-btn");
+      const linkText = document.getElementById("modal-link-text");
       if (data.link) {
         linkBtn.href = data.link;
+        linkText.textContent = data.linkText || "Buka Berkas / Tautan";
         linkBtn.classList.remove("hidden");
       } else {
         linkBtn.classList.add("hidden");
+      }
+
+      // Re-initialize Lucide icons in dynamically injected elements
+      if (window.lucide) {
+        lucide.createIcons();
       }
 
       modal.showModal();
@@ -1384,6 +1497,9 @@
     function closeProjectModal() {
       const modal = document.getElementById("project-modal");
       if (modal) {
+        // Pause any playing video when closing
+        const video = modal.querySelector("video");
+        if (video) video.pause();
         modal.close();
         document.body.style.overflow = "auto";
       }
