@@ -20,7 +20,7 @@ const portfolioData = {
     whatsappUrl: "https://wa.me/6285736425509?text=Halo%20Della,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi.",
     linkedin: "https://www.linkedin.com/in/della-arthamevia",
     github: "https://github.com/Della37",
-    cvUrl: "assets/CV_DELLA%20ARTHAMEVIA%20FIKS%20BARU.pdf"
+    cvUrl: "assets/cv-della-page-1.png"
   },
 
   stats: [
@@ -39,7 +39,7 @@ const portfolioData = {
       description: "Penyusunan dan revisi draft dokumen UKL-UPL proyek fasilitas olahraga dan rekreasi di Surabaya, mencakup koordinasi langsung dengan DLH Surabaya serta survey lapangan komprehensif.",
       image: "assets/Survey%20lokasi.jpeg",
       tags: ["UKL-UPL", "DLH Surabaya", "Survey Lapangan", "Dokumen Lingkungan"],
-      demoUrl: "assets/Cover%20Dokumen%20UKL%20UPL.pdf",
+      demoUrl: "assets/cover-dokumen-ukl-upl.png",
       githubUrl: "https://github.com/Della37/porto"
     },
     {
@@ -143,7 +143,7 @@ const portfolioData = {
       issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
       year: "2024",
       credentialId: "BNSP-K3-MADYA",
-      credentialUrl: "assets/Sertifikat%20Ahli%20K3%20Madya.pdf",
+      credentialUrl: "assets/sertif%20ahli%20k3%201.jpeg",
       badge: "Sertifikasi Nasional BNSP",
       summary: "Sertifikasi kompetensi nasional untuk pengelolaan keselamatan dan kesehatan kerja (K3), identifikasi bahaya, penilaian risiko, serta kepatuhan standar K3 di lingkungan kerja industri.",
       skillsAcquired: ["Keselamatan & Kesehatan Kerja (K3)", "Hazard Identification", "Risk Assessment", "Regulasi K3 Nasional"]
@@ -165,7 +165,7 @@ const portfolioData = {
       issuer: "Universitas Indonesia",
       year: "2023",
       credentialId: "UI-STS-2023",
-      credentialUrl: "assets/Sertifikat_Kegiatan_Pelatihan_Pengolahan_Data.pdf",
+      credentialUrl: "assets/Sertifikat_Kegiatan_Pelatihan_Pengolahan_Data_page-0001.jpg",
       badge: "Pelatihan Perguruan Tinggi",
       summary: "Program pelatihan terpadu pengoperasian perangkat lunak analisis dan pengolahan data teknis guna menunjang riset keteknikan dan simulasi proses.",
       skillsAcquired: ["Pengolahan Data Teknis", "Software Engineering Tools", "Analisis Data Kuantitatif", "Dokumentasi Teknis"]
