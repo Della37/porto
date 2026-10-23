@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alya Safira Putri — Portofolio Web & Kreatif</title>
+  <meta name="description" content="Website Portofolio profesional Alya Safira Putri — Digital Creative & Web Frontend Specialist dengan rekam jejak karya proyek unggulan, pengalaman kerja, pelatihan bersertifikat, dan matriks keahlian.">
+  <meta name="author" content="Alya Safira Putri">
+  <meta name="theme-color" content="#FF6584">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Alya Safira Putri — Portofolio Web & Kreatif">
+  <meta property="og:description" content="Web Portofolio personal dengan estetika Soft Pastel Rose & Glassmorphism. Berisi data diri, galeri proyek unggulan, pengalaman kerja, pelatihan bersertifikat, dan keahlian.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon / Monogram Emoji Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs di Latar Belakang -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="bg-glow-orb bg-glow-orb-1"></div>
+    <div class="bg-glow-orb bg-glow-orb-2"></div>
+    <div class="bg-glow-orb bg-glow-orb-3"></div>
+  </div>
+
+  <!-- Header Navigasi Sticky Glassmorphism -->
+  <header class="site-header glass-header" id="main-header">
+    <div class="container navbar">
+      <a href="#tentang" class="brand-monogram" aria-label="Beranda Portofolio Alya Safira">
+        <div class="monogram-badge">AS</div>
+        <div class="brand-text">Alya<span>Safira</span></div>
+      </a>
+
+      <!-- Menu Navigasi Anchor -->
+      <nav aria-label="Navigasi Utama">
+        <ul class="nav-links">
+          <li><a href="#tentang" class="active">Tentang</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#pelatihan">Pelatihan</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Tombol Aksi Header -->
+      <div class="nav-actions">
+        <!-- Tombol Unduh File CV -->
+        <a href="#" id="btn-download-cv-nav" class="btn btn-outline" title="Unduh File CV Resmi (PDF)">
+          <span>📄</span>
+          <span>Unduh CV</span>
+        </a>
+
+        <!-- Tombol Aksi Kontak -->
+        <a href="#kontak" class="btn btn-primary" title="Hubungi dan diskusikan peluang kerja">
+          <span>💬</span>
+          <span>Hubungi Saya</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN PORTFOLIO SHOWCASE
+       ========================================================================= -->
+  <main id="showcase-view">
+
+    <!-- Hero Section (Data Diri & Pengantar) -->
+    <section class="section-wrapper hero-section" id="tentang">
+      <div class="container">
+        <div class="glass-panel hero-card">
+          <div class="hero-content">
+            <div class="hero-status-pill">
+              <span class="status-dot"></span>
+              <span id="profile-status">Terbuka untuk Peluang Kerja & Proyek Kolaborasi</span>
+            </div>
+
+            <h1 class="hero-title">
+              Halo, Saya <span class="gradient-text" id="profile-name">Alya Safira Putri</span> 🌸
+            </h1>
+
+            <p class="hero-role-headline" id="profile-title">
+              Digital Creative & Web Frontend Specialist
+            </p>
+
+            <p class="hero-bio" id="profile-bio">
+              Profesional kreatif dengan pengalaman merancang dan mengembangkan antarmuka web modern yang estetis, responsif, dan mudah diakses. Terbiasa memadukan kepekaan estetika desain visual dengan kode web yang bersih serta terstruktur.
+            </p>
+
+            <div class="hero-action-buttons">
+              <a href="#" id="btn-whatsapp" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <span>💬</span> Hubungi via WhatsApp
+              </a>
+              <button id="btn-copy-email" class="btn btn-secondary">
+                <span>✉️</span> Salin Email
+              </button>
+              <a href="#" id="btn-download-cv-hero" class="btn btn-secondary" title="Unduh File CV Asli">
+                <span>📄</span> Unduh CV (PDF)
+              </a>
+              <a href="#proyek" class="btn btn-secondary">
+                <span>🎨</span> Lihat Galeri Proyek
+              </a>
+            </div>
+          </div>
+
+          <!-- Avatar Frame -->
+          <div class="hero-avatar-wrapper">
+            <div class="avatar-halo"></div>
+            <div class="avatar-image-frame">
+              <img id="profile-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Foto Profil Alya Safira Putri">
+            </div>
+            <div class="avatar-badge-float">
+              <span>📍</span> <span id="profile-location">Jakarta & Bandung, ID</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="stats-grid" id="stats-container">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Galeri Karya & Proyek Unggulan) -->
+    <section class="section-wrapper" id="proyek">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pill-tag">🎨 Galeri Karya Portofolio</div>
+          <h2 class="section-title">Proyek & Karya Unggulan</h2>
+          <p class="section-desc">Koleksi proyek pilihan mencakup perancangan antarmuka digital, web development, dan implementasi visual interaktif.</p>
+        </div>
+
+        <!-- Grid Proyek -->
+        <div class="projects-grid" id="projects-container">
+          <!-- Diisi otomatis oleh JavaScript dari data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (Riwayat Pengalaman / Karir) -->
+    <section class="section-wrapper" id="pengalaman">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pill-tag">💼 Rekam Jejak Karir</div>
+          <h2 class="section-title">Pengalaman Kerja & Kontribusi</h2>
+          <p class="section-desc">Riwayat peran profesional, tanggung jawab utama, dan dampak terukur yang pernah dihasilkan.</p>
+        </div>
+
+        <!-- Timeline Komponen -->
+        <div class="timeline-container">
+          <div class="timeline-stem"></div>
+          <div id="experience-timeline-list">
+            <!-- Diisi otomatis oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainings & Certifications Section (Pelatihan Bersertifikat) -->
+    <section class="section-wrapper" id="pelatihan">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pill-tag">📜 Lisensi & Sertifikasi</div>
+          <h2 class="section-title">Pelatihan & Sertifikasi Profesional</h2>
+          <p class="section-desc">Pengembangan kompetensi berkelanjutan melalui program pelatihan berstandar nasional dan global.</p>
+        </div>
+
+        <div class="trainings-grid" id="trainings-container">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (Matriks Keahlian & Kategori) -->
+    <section class="section-wrapper" id="keahlian">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pill-tag">⚡ Kompetensi & Keahlian</div>
+          <h2 class="section-title">Keahlian Teknis & Alat Kerja</h2>
+          <p class="section-desc">Eksplorasi spektrum kemampuan teknis, perangkat lunak desain, dan soft skills yang dikuasai.</p>
+        </div>
+
+        <!-- Tab Filter Kategori Skill -->
+        <div class="skill-tabs-nav" id="skill-category-tabs">
+          <!-- Tombol filter diisi dinamis oleh JavaScript -->
+        </div>
+
+        <!-- Grid Kartu Skill -->
+        <div class="skills-grid" id="skills-grid-container">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Language Section -->
+    <section class="section-wrapper" id="pendidikan">
+      <div class="container">
+        <div class="extra-info-grid">
+          <!-- Kolom Pendidikan -->
+          <div class="glass-panel info-card">
+            <h3 class="info-card-title">
+              <span>🎓</span> Riwayat Pendidikan Formal
+            </h3>
+            <div id="education-container">
+              <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+          </div>
+
+          <!-- Kolom Kemampuan Bahasa -->
+          <div class="glass-panel info-card">
+            <h3 class="info-card-title">
+              <span>🗣️</span> Penguasaan Bahasa
+            </h3>
+            <div class="language-list" id="languages-container">
+              <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & Quick Contact Call-To-Action -->
+    <footer class="site-footer" id="kontak">
+      <div class="container">
+        <div class="glass-panel cta-box">
+          <h2 class="cta-title">Tertarik Membangun Karya atau Merekrut Saya?</h2>
+          <p class="cta-desc">
+            Saya siap berkontribusi pada proyek inovatif berikutnya atau bergabung dalam tim hebat Anda. Mari diskusikan bagaimana kita bisa berkolaborasi!
+          </p>
+          <div class="cta-buttons">
+            <a href="#" id="cta-whatsapp-link" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <span>💬</span> Hubungi via WhatsApp Langsung
+            </a>
+            <button id="cta-copy-email-btn" class="btn btn-secondary">
+              <span>📋</span> Salin Alamat Email
+            </button>
+            <a href="#" id="btn-download-cv-footer" class="btn btn-secondary" title="Unduh File CV Resmi">
+              <span>📄</span> Unduh CV Lengkap (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Alya Safira Putri. Dirancang dengan cinta dalam rona Soft Pastel Rose & Glassmorphism.</p>
+          <div class="social-links" id="footer-social-links">
+            <!-- Diisi otomatis oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- =========================================================================
+       NATIVE HTML5 DIALOG (Modal Lightbox Detail Sertifikat)
+       ========================================================================= -->
+  <dialog id="certificate-modal" class="glass-dialog">
+    <div class="glass-modal-card">
+      <div class="modal-header">
+        <h3 id="modal-cert-title">Detail Sertifikat Pelatihan</h3>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Tutup Jendela Modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="cert-preview-card">
+          <div class="cert-preview-icon">📜</div>
+          <h4 id="modal-cert-issuer" style="font-size: 1.15rem; color: var(--pink-deep); margin-bottom: 0.35rem;">Institusi Penerbit</h4>
+          <p id="modal-cert-badge" style="display: inline-block; font-size: 0.8rem; font-weight: 700; background: var(--pink-blush); color: var(--pink-deep); padding: 0.2rem 0.75rem; border-radius: 99px;">Tipe Akreditasi</p>
+        </div>
+
+        <div class="cert-meta-item">
+          <strong>Nomor Kredensial / ID:</strong>
+          <span id="modal-cert-id" style="font-family: monospace; background: var(--pink-lightest); padding: 0.2rem 0.5rem; border-radius: 4px;">-</span>
+        </div>
+
+        <div class="cert-meta-item">
+          <strong>Tahun Penerbitan:</strong>
+          <span id="modal-cert-year">-</span>
+        </div>
+
+        <div class="cert-meta-item" style="margin-top: 1rem;">
+          <strong>Deskripsi Materi Pelatihan:</strong>
+          <p id="modal-cert-desc" style="color: var(--text-muted); font-size: 0.94rem; margin-top: 0.35rem; line-height: 1.6;">-</p>
+        </div>
+
+        <div class="cert-meta-item" style="margin-top: 1rem;">
+          <strong>Kompetensi yang Dicapai:</strong>
+          <div id="modal-cert-skills" style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.5rem;">
+            <!-- Badge kompetensi diisi dinamis -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modal-close-action" class="btn btn-secondary">Tutup Pratinjau</button>
+        <a id="modal-cert-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>🔗</span> Verifikasi Kredensial Resmi
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Wadah Toast Notifikasi -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

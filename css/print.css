@@ -1,0 +1,82 @@
+/**
+ * print.css - Styling Khusus Cetak Halaman Portofolio
+ * Menghilangkan elemen interaktif mengambang dan memastikan tata letak portofolio
+ * tercetak bersih dan rapi.
+ */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm;
+  }
+
+  /* Reset Dasar Cetak */
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #1a1a1a !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  /* Sembunyikan elemen dekoratif melayang & kontrol yang tidak perlu saat dicetak */
+  .site-header,
+  .ambient-glow-wrapper,
+  .hero-action-buttons,
+  .skill-tabs-nav,
+  .project-action-bar,
+  .btn-view-cert,
+  .toast-container,
+  dialog,
+  .site-footer .cta-box {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding-inline: 0 !important;
+  }
+
+  .section-wrapper {
+    padding-block: 2rem !important;
+  }
+
+  .glass-panel {
+    border: 1pt solid #DDD !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .project-card,
+  .timeline-item,
+  .training-card,
+  .skill-item-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-card {
+    display: block !important;
+  }
+
+  .hero-avatar-wrapper {
+    display: none !important;
+  }
+
+  .section-title {
+    color: #1a1a1a !important;
+    border-bottom: 1.5pt solid #FF6584 !important;
+    padding-bottom: 0.35rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
